@@ -1,0 +1,454 @@
+\documentclass[
+    12pt,
+    oneside,
+    a4paper,
+    english,
+    brazilian
+    ]{abntex2}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{indentfirst}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\numberwithin{equation}{chapter}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage[alf]{abntex2cite}
+\usepackage{hyperref}
+\usepackage{csquotes}
+
+\newenvironment{dica}{%
+    \par\medskip
+    \color{blue!60!black}\small\itshape
+}{%
+    \par\medskip
+}
+
+\newenvironment{exercicio}{%
+    \par\medskip
+    \color{teal!80!black}\small
+    \noindent\textbf{Exercício: }\ignorespaces
+}{%
+    \par\medskip
+}
+
+\usepackage{imakeidx}
+\makeindex
+
+\geometry{top=3cm, left=3cm, right=2cm, bottom=2cm}
+
+% Abstract no padrão ABNT (sem recuos, fonte do corpo do texto)
+\setlength{\absleftindent}{0cm}
+\setlength{\absrightindent}{0cm}
+\renewcommand{\abstracttextfont}{\normalfont\normalsize}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.97,0.97,0.97}
+
+\lstdefinestyle{pythonstyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false, breaklines=true, captionpos=b,
+    keepspaces=true, numbers=left, numbersep=5pt,
+    showspaces=false, showstringspaces=false, showtabs=false,
+    tabsize=4, language=Python, frame=single, framerule=0.5pt,
+    rulecolor=\color{codegray},
+}
+\lstset{
+    style=pythonstyle,
+    inputencoding=utf8,
+    extendedchars=true,
+    literate=%
+        {á}{{\'a}}1 {à}{{\`a}}1 {â}{{\^a}}1 {ã}{{\~a}}1 {ä}{{\"a}}1
+        {é}{{\'e}}1 {è}{{\`e}}1 {ê}{{\^e}}1 {ë}{{\"e}}1
+        {í}{{\'i}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
+        {ó}{{\'o}}1 {ò}{{\`o}}1 {ô}{{\^o}}1 {õ}{{\~o}}1 {ö}{{\"o}}1
+        {ú}{{\'u}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
+        {ç}{{\c{c}}}1
+        {Á}{{\'A}}1 {À}{{\`A}}1 {Â}{{\^A}}1 {Ã}{{\~A}}1 {Ä}{{\"A}}1
+        {É}{{\'E}}1 {È}{{\`E}}1 {Ê}{{\^E}}1 {Ë}{{\"E}}1
+        {Í}{{\'I}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
+        {Ó}{{\'O}}1 {Ò}{{\`O}}1 {Ô}{{\^O}}1 {Õ}{{\~O}}1 {Ö}{{\"O}}1
+        {Ú}{{\'U}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
+        {Ç}{{\c{C}}}1
+}
+
+\graphicspath{{figuras/}}
+
+\renewcommand{\appendixname}{Apêndice}
+\renewcommand{\appendixtocname}{Apêndices}
+\renewcommand{\appendixpagename}{Apêndices}
+
+\titulo{\Large \textbf{Introdução à Ciência de Dados: Uma Abordagem Prática com Python}
+}
+
+\autor{
+    \textbf{Prof. Dr. Nome do Autor(a)} \\
+    \small Departamento de Ciência de Dados \\
+    \small \texttt{email@ufpb.br}
+}
+
+\data{\today}
+
+\begin{document}
+
+\pretextual
+\maketitle
+\newpage
+
+\begin{resumo}
+\noindent Este livro-texto apresenta os fundamentos da \index{Ciência de Dados}Ciência de Dados com ênfase na aplicação prática utilizando a linguagem Python. O conteúdo abrange desde conceitos introdutórios até técnicas avançadas de \index{Machine Learning}\textit{Machine Learning}, passando por análise exploratória, pré-processamento e visualização de dados. Cada capítulo combina fundamentação teórica com exemplos práticos, exercícios e estudos de caso. O material foi elaborado para disciplinas de graduação e pós-graduação, podendo ser utilizado tanto em sala de aula quanto em regime de auto-estudo. Ao final, o leitor será capaz de estruturar pipelines completos de Ciência de Dados, desde a coleta até a comunicação dos resultados. 
+\newline
+\noindent \textbf{Palavras-chave:} \index{Ciência de Dados}Ciência de Dados. \index{Python}Python. \index{Machine Learning}\textit{Machine Learning}. \index{Visualização}Visualização de Dados. \index{Ensino}Ensino.
+\end{resumo}
+
+\begin{otherlanguage*}{english}
+\begin{resumo}[Abstract]
+\noindent This textbook presents the fundamentals of Data Science with an emphasis on practical application using Python. The content ranges from introductory concepts to advanced Machine Learning techniques, including exploratory analysis, preprocessing and data visualization. 
+\newline
+\noindent \textbf{Keywords:} Data Science. Python. Machine Learning. Data Visualization. Teaching.
+\end{resumo}
+\end{otherlanguage*}
+\newpage
+
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\newpage
+
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\newpage
+
+% ============================================================
+\textual
+% ============================================================
+
+\chapter{Introdução à Ciência de Dados}
+
+\begin{dica}
+\noindent\textbf{Dica ao professor:} Este capítulo introdutório pode ser trabalhado em 2 a 3 encontros. Incentive os alunos a refletir sobre exemplos do dia a dia que envolvem dados: redes sociais, \textit{e-commerce}, saúde, transporte. O objetivo é despertar a curiosidade antes de mergulhar nos aspectos técnicos.
+\end{dica}
+
+A \index{Ciência de Dados}Ciência de Dados é uma disciplina interdisciplinar que combina estatística, computação e conhecimento de domínio para extrair conhecimento de dados~\cite{provost2013}. Diferentemente da estatística clássica, a Ciência de Dados lida com volumes massivos de informação, frequentemente não estruturada, e emprega métodos computacionais escaláveis.
+
+Conforme destacam \citeonline{hastie2009}, o objetivo central é transformar dados brutos em informação acionável. Este processo é frequentemente descrito pelo ciclo \index{CRISP-DM}CRISP-DM (\textit{Cross-Industry Standard Process for Data Mining}), ilustrado na Figura~\ref{fig:pipeline}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{pipeline_metodologico.eps}
+    \caption{Pipeline da Ciência de Dados segundo o modelo CRISP-DM.}
+    \label{fig:pipeline}
+    \small \textit{Fonte: Elaborado pelo autor (\the\year).}
+\end{figure}
+
+\section{O que são Dados?}
+
+Dados são registros de fenômenos observáveis. No contexto da Ciência de Dados, classificam-se em:
+
+\begin{itemize}
+    \item \textbf{Estruturados}: organizados em tabelas (linhas e colunas), como planilhas e bancos relacionais;
+    \item \textbf{Semi-estruturados}: possuem alguma organização, como JSON e XML;
+    \item \textbf{Não estruturados}: textos, imagens, áudio e vídeo.
+\end{itemize}
+
+A Tabela~\ref{tab:dicionario} apresenta um exemplo de dicionário de dados estruturados. Cada linha representa uma variável e sua descrição.
+
+\input{tabelas/tab_dicionario_dados.tex}
+
+\begin{exercicio}
+Identifique três exemplos de dados não estruturados no seu cotidiano e descreva como poderiam ser convertidos em dados estruturados para análise.
+\end{exercicio}
+
+\section{Ciclo de Vida de um Projeto de Dados}
+
+Um projeto típico de Ciência de Dados segue as etapas descritas na Tabela~\ref{tab:pipeline_estrutura}.
+
+\begin{table}[htbp]
+\centering
+\caption{Etapas de um projeto de Ciência de Dados.}
+\label{tab:pipeline_estrutura}
+\small
+\begin{tabular}{clp{7cm}}
+\toprule
+\textbf{Etapa} & \textbf{Descrição} & \textbf{Atividades Principais} \\
+\midrule
+1. Definição do problema & Entender o contexto de negócio & Definir objetivos, métricas de sucesso \\
+2. Coleta & Obter dados relevantes & Web scraping, APIs, bancos de dados \\
+3. Preparação & Limpar e organizar dados & Tratar valores ausentes, \textit{encoding} \\
+4. Modelagem & Aplicar algoritmos & Treinar modelos, ajustar hiperparâmetros \\
+5. Avaliação & Mensurar resultados & Calcular métricas, validar hipóteses \\
+6. Implantação & Colocar em produção & Dashboard, API, relatórios \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\chapter{Fundamentos de Python para Dados}
+% ============================================================
+
+\begin{dica}
+\noindent\textbf{Dica ao professor:} Se a turma já tem familiaridade com Python, este capítulo pode ser usado como revisão. Caso contrário, dedique de 2 a 3 aulas para os conceitos básicos antes de avançar para manipulação de dados com pandas.
+\end{dica}
+
+\index{Python}Python~\cite{mckinney2022} tornou-se a linguagem dominante em Ciência de Dados devido à sua sintaxe simples, ecossistema rico de bibliotecas e comunidade ativa. Este capítulo apresenta os fundamentos necessários para acompanhar o restante do livro.
+
+\section{Estruturas de Dados Básicas}
+
+Python oferece quatro estruturas de dados incorporadas: \index{lista}listas, \index{tupla}tuplas, \index{dicionário}dicionários e \index{conjunto}conjuntos. A Tabela~\ref{tab:estatisticas} (gerada automaticamente) ilustra estatísticas descritivas de um conjunto de dados numéricos.
+
+\input{tabelas/tab_estatisticas_descritivas}
+
+A Equação~\ref{eq:media} define a média aritmética, uma das medidas mais utilizadas:
+
+\begin{equation}
+    \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+    \label{eq:media}
+\end{equation}
+
+\begin{dica}
+\noindent\textbf{Dica ao aluno:} A média é sensível a valores extremos (\textit{outliers}). Quando os dados apresentam assimetria, prefira a mediana como medida de tendência central. Use \texttt{df.describe()} no pandas para obter ambas simultaneamente.
+\end{dica}
+
+\begin{exercicio}
+Carregue um dataset CSV de sua escolha usando \texttt{pandas.read\_csv()} e calcule a média, mediana e desvio padrão de cada coluna numérica. Compare os resultados e identifique possíveis \textit{outliers}.
+\end{exercicio}
+
+\section{Bibliotecas Essenciais}
+
+O ecossistema Python para dados é composto por:
+\begin{itemize}
+    \item \textbf{\texttt{numpy}}: computação numérica com arrays multidimensionais;
+    \item \textbf{\texttt{pandas}}: manipulação de dados tabulares~\cite{pandas2023};
+    \item \textbf{\texttt{matplotlib}}: visualização de dados (gráficos 2D);
+    \item \textbf{\texttt{seaborn}}: visualização estatística de alto nível;
+    \item \textbf{\texttt{scikit-learn}}: aprendizado de máquina~\cite{scikit2023}.
+\end{itemize}
+
+% ============================================================
+\chapter{Análise Exploratória de Dados}
+% ============================================================
+
+\begin{dica}
+\noindent\textbf{Dica ao professor:} A Análise Exploratória de Dados (EDA) é talvez a etapa mais criativa do pipeline. Incentive os alunos a formular hipóteses antes de gerar gráficos. Lembre-os do princípio de \citeonline{tukey1977}: ``Explorar é procurar sem saber exatamente o que se procura.''
+\end{dica}
+
+A \index{Análise Exploratória}Análise Exploratória de Dados (EDA)~\cite{tukey1977} é o processo de investigar dados por meio de resumos estatísticos e representações gráficas. O objetivo é compreender a estrutura dos dados antes de aplicar modelos.
+
+\section{Estatísticas Descritivas}
+
+A Tabela~\ref{tab:estatisticas} (apresentada no capítulo anterior) sumariza as principais métricas descritivas. A Figura~\ref{fig:distribuicao} complementa com visualizações da distribuição das variáveis.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.82\textwidth]{distribuicao_features.eps}
+    \caption{Distribuição das principais variáveis numéricas do dataset.}
+    \label{fig:distribuicao}
+    \small \textit{Fonte: Elaborado pelo autor (\the\year).}
+\end{figure}
+
+\section{Análise de Correlação}
+
+A correlação mede a relação linear entre duas variáveis. O coeficiente de correlação de \index{correlação}Pearson ($r$) varia de $-1$ a $+1$, conforme a Equação~\ref{eq:pearson}:
+
+\begin{equation}
+    r_{xy} = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n} (x_i - \bar{x})^2 \sum_{i=1}^{n} (y_i - \bar{y})^2}}
+    \label{eq:pearson}
+\end{equation}
+
+A Figura~\ref{fig:correlacao} apresenta a matriz de correlação entre as variáveis do dataset.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{correlacao_heatmap.eps}
+    \caption{Matriz de correlação entre as variáveis numéricas.}
+    \label{fig:correlacao}
+    \small \textit{Fonte: Elaborado pelo autor (\the\year).}
+\end{figure}
+
+\begin{exercicio}
+Utilizando um dataset de sua escolha, calcule a matriz de correlação e identifique os três pares de variáveis com maior correlação positiva e negativa. Há alguma correlação espúria?
+\end{exercicio}
+
+% ============================================================
+\chapter{Pré-processamento de Dados}
+% ============================================================
+
+\begin{dica}
+\noindent\textbf{Dica ao aluno:} O pré-processamento consome cerca de 80\% do tempo em projetos de dados reais. Não pule esta etapa. Dados bem preparados são condição necessária --- embora não suficiente --- para modelos de qualidade~\cite{box1978}.
+\end{dica}
+
+O \index{pré-processamento}pré-processamento transforma dados brutos em um formato adequado para modelagem. As principais etapas incluem tratamento de valores ausentes, \index{encoding}codificação de variáveis categóricas e normalização.
+
+\section{Valores Ausentes}
+
+Valores ausentes podem ser tratados por:
+\begin{itemize}
+    \item \textbf{Remoção}: eliminar linhas ou colunas com muitos valores faltantes;
+    \item \textbf{Imputação}: preencher com média, mediana, moda ou valor previsto.
+\end{itemize}
+
+\section{Codificação de Variáveis Categóricas}
+
+Algoritmos de \index{Machine Learning}ML exigem entrada numérica. Variáveis categóricas são convertidas via \textit{one-hot encoding} ou \textit{label encoding}.
+
+\section{Normalização}
+
+A normalização escala as variáveis para uma faixa comparável. Dois métodos comuns:
+
+\begin{equation}
+    \text{Min-Max: } x' = \frac{x - x_{\min}}{x_{\max} - x_{\min}}
+    \label{eq:minmax}
+\end{equation}
+
+\begin{equation}
+    \text{Z-Score: } x' = \frac{x - \bar{x}}{\sigma}
+    \label{eq:zscore}
+\end{equation}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.70\textwidth]{churn_por_categoria.eps}
+    \caption{Taxa de evasão por categoria de cliente --- exemplo de análise univariada.}
+    \label{fig:churn}
+    \small \textit{Fonte: Elaborado pelo autor (\the\year).}
+\end{figure}
+
+% ============================================================
+\chapter{Machine Learning}
+% ============================================================
+
+\begin{dica}
+\noindent\textbf{Dica ao professor:} Este capítulo pode ser dividido em duas partes: (1) fundamentos teóricos com ênfase nos conceitos de treino/teste, viés-variância e validação cruzada; (2) prática com \texttt{scikit-learn}. Recomenda-se um laboratório por algoritmo.
+\end{dica}
+
+O \index{Aprendizado Supervisionado}Aprendizado Supervisionado~\cite{hastie2009} é o ramo do \index{Machine Learning}\textit{Machine Learning} que aprende a mapear entradas a saídas a partir de exemplos rotulados.
+
+\section{Regressão Logística}
+
+A \index{Regressão Logística}Regressão Logística~\cite{james2023} modela a probabilidade de pertencimento a uma classe:
+
+\begin{equation}
+    P(Y = 1 \mid \mathbf{X}) = \frac{1}{1 + e^{-(\beta_0 + \boldsymbol{\beta}^T \mathbf{X})}}
+    \label{eq:logistic}
+\end{equation}
+
+A Tabela~\ref{tab:coeficientes} apresenta os coeficientes estimados para um exemplo de aplicação.
+
+\input{tabelas/tab_coeficientes_modelo}
+
+\section{Random Forest}
+
+O \index{Random Forest}\textit{Random Forest}~\cite{breiman2001} constrói múltiplas árvores de decisão e combina suas predições. A importância das variáveis pode ser visualizada na Figura~\ref{fig:importancia}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.72\textwidth]{importancia_features.eps}
+    \caption{Importância das \textit{features} no modelo \textit{Random Forest}.}
+    \label{fig:importancia}
+    \small \textit{Fonte: Elaborado pelo autor (\the\year).}
+\end{figure}
+
+\section{Avaliação de Modelos}
+
+A Tabela~\ref{tab:comparacao} compara o desempenho de diferentes algoritmos.
+
+\input{tabelas/tab_comparacao_modelos}
+
+A Figura~\ref{fig:roc} apresenta as curvas ROC.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.70\textwidth]{curva_roc.eps}
+    \caption{Curvas ROC dos modelos avaliados.}
+    \label{fig:roc}
+    \small \textit{Fonte: Elaborado pelo autor (\the\year).}
+\end{figure}
+
+\begin{exercicio}
+Treine um modelo \textit{Random Forest} no dataset \texttt{titanic} do Seaborn. Varie o número de árvores (10, 50, 100, 200) e observe o impacto na acurácia. O que acontece com o tempo de treinamento?
+\end{exercicio}
+
+% ============================================================
+\chapter{Visualização de Dados}
+% ============================================================
+
+\begin{dica}
+\noindent\textbf{Dica ao aluno:} Um bom gráfico comunica em segundos o que uma tabela levaria páginas para explicar. Entretanto, gráficos enganosos podem distorcer a realidade. Sempre inclua: título claro, eixos rotulados, fonte dos dados e escala adequada~\cite{tukey1977}.
+\end{dica}
+
+A \index{Visualização}visualização de dados é uma ferramenta essencial para comunicação de resultados. A Tabela~\ref{tab:matriz} apresenta a matriz de confusão do modelo \textit{LightGBM}.
+
+\input{tabelas/tab_matriz_confusao}
+
+\begin{exercicio}
+Crie um gráfico de dispersão (\texttt{scatterplot}) relacionando duas variáveis do dataset \texttt{iris}. Adicione cores para cada espécie e interprete os padrões visuais.
+\end{exercicio}
+
+% ============================================================
+% ÍNDICE REMISSIVO
+% ============================================================
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{\indexname}
+\printindex
+
+% ============================================================
+% APÊNDICES
+% ============================================================
+\newpage
+\appendix
+\part*{Apêndices}
+\addcontentsline{toc}{chapter}{Apêndices}
+
+\chapter{Respostas dos Exercícios Selecionados}
+
+\begin{dica}
+\noindent\textbf{Dica ao professor:} As respostas completas podem ser disponibilizadas em um repositório separado para evitar consulta prévia pelos alunos. Neste apêndice, incluímos apenas as respostas dos exercícios ímpares.
+\end{dica}
+
+\noindent\textbf{Exercício 1 (Capítulo 1):} Exemplos de dados não estruturados: (a) postagens em redes sociais --- convertidas para tabela via análise de sentimento; (b) avaliações de produtos --- convertidas para notas numéricas; (c) gravações de chamadas --- convertidas para texto via ASR e depois para métricas de satisfação.
+
+\noindent\textbf{Exercício 3 (Capítulo 3):} Os três pares com maior correlação foram: \texttt{satisfacao} e \texttt{num\_reclamacoes} ($r = -0,72$), \texttt{renda\_mensal} e \texttt{tempo\_conta\_meses} ($r = 0,45$), \texttt{idade} e \texttt{tempo\_conta\_meses} ($r = 0,38$). Correlações espúrias devem ser validadas com conhecimento de domínio.
+
+\chapter{Instalação do Ambiente Python}
+
+Para reproduzir os exemplos deste livro, siga os passos:
+
+\begin{enumerate}
+    \item Instale Python 3.10+ (\url{https://python.org})
+    \item Instale as dependências: \texttt{pip install numpy pandas matplotlib seaborn scikit-learn jupyter}
+    \item Clone o repositório: \texttt{git clone https://github.com/seu-usuario/projeto-tcc}
+    \item Execute: \texttt{cd projeto-tcc \&\& make setup}
+\end{enumerate}
+
+A Figura~\ref{fig:importancia} do Capítulo~\ref{fig:importancia} foi gerada com o código disponível no repositório.
+
+% ============================================================
+% REFERÊNCIAS
+% ============================================================
+\newpage
+\bibliographystyle{abntex2-alf}
+\bibliography{referencias}
+
+\end{document}

@@ -1,0 +1,105 @@
+# ==============================================================
+# .gitignore — Repositório-Modelo de TCC (Ciência de Dados)
+# ==============================================================
+
+# ── Sistema Operacional ───────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+._*
+
+# ── Editores e IDEs ──────────────────────────────────────────
+*.swp
+*.swo
+*~
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# ── Arquivos Temporários ─────────────────────────────────────
+*.tmp
+*.bak
+*.orig
+
+# ── Python ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+scripts/.venv/
+
+# Jupyter Notebook checkpoints
+notebooks/.ipynb_checkpoints/
+.ipynb_checkpoints/
+.ruff_cache
+.uv-data/
+
+# ── LaTeX (artefatos de compilação) ──────────────────────────
+*.aux
+*.log
+*.out
+*.toc
+*.lot
+*.lof
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.bbl
+*.blg
+*.brf
+*.run.xml
+*.bcf
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ilg
+*.ind
+*.glg
+*.glo
+*.gls
+*.ist
+
+# ── Dados processados (regeneráveis) ─────────────────────────
+dados/processados/*
+dados/brutos/*
+!dados/processados/.gitkeep
+!dados/brutos/.gitkeep
+
+# ── Resultados (regeneráveis pelos scripts) ──────────────────
+resultados/*
+!resultados/.gitkeep
+!resultados/figuras/
+resultados/figuras/*
+!resultados/figuras/.gitkeep
+!resultados/metricas/
+resultados/metricas/*
+!resultados/metricas/.gitkeep
+!resultados/relatorios/
+resultados/relatorios/*
+!resultados/relatorios/.gitkeep
+
+# ── Modelos treinados (binários grandes) ─────────────────────
+modelos/*.pkl
+modelos/*.joblib
+modelos/*.h5
+modelos/*.pt
+modelos/*.onnx
+!modelos/.gitkeep
+
+# ── PDF gerado (regenerável via make latex) ──────────────────
+# ── EPS gerados (regeneráveis) ───────────────────────────────
+tex/*.pdf
+tex/*.png
+tex/*.eps
+*.pdf
+*.eps

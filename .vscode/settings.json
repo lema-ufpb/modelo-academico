@@ -1,0 +1,40 @@
+{
+    "files.exclude": {
+        // Arquivos de sistema
+        "**/.DS_Store": true,
+
+        // Python (artefatos)
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "**/.pytest_cache": true,
+        "**/.ruff_cache": true,
+        "**/.uv-data": true,
+        "**/.ipynb_checkpoints": true,
+
+        // LaTeX (artefatos de compilação)
+        "**/*.aux": true,
+        "**/*.bbl": true,
+        "**/*.bcf": true,
+        "**/*.blg": true,
+        "**/*.brf": true,
+        "**/*.fdb_latexmk": true,
+        "**/*.fls": true,
+        "**/*.glg": true,
+        "**/*.glo": true,
+        "**/*.gls": true,
+        "**/*.idx": true,
+        "**/*.ilg": true,
+        "**/*.ind": true,
+        "**/*.ist": true,
+        "**/*.log": true,
+        "**/*.lot": true,
+        "**/*.lof": true,
+        "**/*.nav": true,
+        "**/*.out": true,
+        "**/*.run.xml": true,
+        "**/*.snm": true,
+        "**/*.synctex.gz": true,
+        "**/*.toc": true,
+        "**/*.vrb": true
+    }
+}

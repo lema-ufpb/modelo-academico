@@ -1,0 +1,472 @@
+\documentclass[
+    12pt,
+    oneside,
+    a4paper,
+    english,
+    brazilian
+    ]{abntex2}
+
+% ============================================================
+% PACOTES
+% ============================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{indentfirst}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\numberwithin{equation}{chapter}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage[alf]{abntex2cite}
+\usepackage{hyperref}
+\usepackage{csquotes}
+
+% Ambiente para dicas pedagógicas
+\newenvironment{dica}{%
+    \par\medskip
+    \color{blue!60!black}\small\itshape
+}{%
+    \par\medskip
+}
+\usepackage{imakeidx}
+\makeindex
+
+\geometry{top=3cm, left=3cm, right=2cm, bottom=2cm}
+
+% Abstract no padrão ABNT (sem recuos, fonte do corpo do texto)
+\setlength{\absleftindent}{0cm}
+\setlength{\absrightindent}{0cm}
+\renewcommand{\abstracttextfont}{\normalfont\normalsize}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.97,0.97,0.97}
+
+\lstdefinestyle{pythonstyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false, breaklines=true, captionpos=b,
+    keepspaces=true, numbers=left, numbersep=5pt,
+    showspaces=false, showstringspaces=false, showtabs=false,
+    tabsize=4, language=Python, frame=single, framerule=0.5pt,
+    rulecolor=\color{codegray},
+}
+\lstset{
+    style=pythonstyle,
+    inputencoding=utf8,
+    extendedchars=true,
+    literate=%
+        {á}{{\'a}}1 {à}{{\`a}}1 {â}{{\^a}}1 {ã}{{\~a}}1 {ä}{{\"a}}1
+        {é}{{\'e}}1 {è}{{\`e}}1 {ê}{{\^e}}1 {ë}{{\"e}}1
+        {í}{{\'i}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
+        {ó}{{\'o}}1 {ò}{{\`o}}1 {ô}{{\^o}}1 {õ}{{\~o}}1 {ö}{{\"o}}1
+        {ú}{{\'u}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
+        {ç}{{\c{c}}}1
+        {Á}{{\'A}}1 {À}{{\`A}}1 {Â}{{\^A}}1 {Ã}{{\~A}}1 {Ä}{{\"A}}1
+        {É}{{\'E}}1 {È}{{\`E}}1 {Ê}{{\^E}}1 {Ë}{{\"E}}1
+        {Í}{{\'I}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
+        {Ó}{{\'O}}1 {Ò}{{\`O}}1 {Ô}{{\^O}}1 {Õ}{{\~O}}1 {Ö}{{\"O}}1
+        {Ú}{{\'U}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
+        {Ç}{{\c{C}}}1
+}
+
+\graphicspath{{figuras/}}
+
+\renewcommand{\appendixname}{Apêndice}
+\renewcommand{\appendixtocname}{Apêndices}
+\renewcommand{\appendixpagename}{Apêndices}
+
+\titulo{%
+    \vspace*{-3.5cm}
+    \begin{minipage}{0.15\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{brasao_ufpb.png}
+    \end{minipage}%
+    \begin{minipage}{0.7\textwidth}
+        \centering
+        \normalsize
+        \textbf{UNIVERSIDADE FEDERAL DA PARAÍBA -- UFPB} \\
+        \textbf{CENTRO DE CIÊNCIAS SOCIAIS APLICADAS -- CCSA} \\
+        \textbf{PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIA DE DADOS}
+    \end{minipage}%
+    \begin{minipage}{0.15\textwidth}
+        \vspace{0pt}
+    \end{minipage}
+    \vspace{2cm}
+    \Large \textbf{Modelos Preditivos e Explicabilidade em Machine Learning: Uma Abordagem Integrada para Previsão de Churn com Dados Desbalanceados do Setor de Telecomunicações Brasileiro}
+}
+
+\autor{
+    \textbf{Nome do Doutorando(a)} \\
+    \small \texttt{email.do.doutorando@academico.ufpb.br} \\
+    \vspace{0.5cm} \\
+    Orientador: Prof. Dr. Nome do Orientador(a) \\
+    \small \texttt{email.do.orientador@ufpb.br}
+}
+
+\data{\today}
+
+\begin{document}
+
+\pretextual
+\maketitle
+\newpage
+
+\begin{resumo}
+\noindent Esta tese propõe uma abordagem integrada envolvendo predição e explicabilidade em \index{Machine Learning}\textit{Machine Learning} aplicada à previsão de \textit{churn} em telecomunicações. A pesquisa desenvolve e valida um \textit{framework} metodológico que combina: (i) um pipeline reprodutível de \index{Ciência de Dados}Ciência de Dados; (ii) seis algoritmos de classificação com otimização de hiperparâmetros; (iii) técnicas de balanceamento para dados desbalanceados (SMOTE, ADASYN, \textit{undersampling}); e (iv) métodos de explicabilidade pós-hoc (SHAP, LIME, PDP). Os experimentos foram conduzidos com dados reais anonimizados de operadoras brasileiras, totalizando 450.000 registros. Os resultados demonstram que o \textit{LightGBM} otimizado alcança AUC-ROC de 0,94, enquanto os valores SHAP revelam que variáveis comportamentais superam variáveis demográficas na predição de \textit{churn}. A tese contribui com: (i) um \textit{framework} metodológico integrado; (ii) \textit{benchmark} público; (iii) análise de explicabilidade inédita; e (iv) repositório aberto e reprodutível. 
+\noindent \textbf{Palavras-chave:} \index{Ciência de Dados}Ciência de Dados. \index{Machine Learning}\textit{Machine Learning}. \index{Churn}\textit{Churn}. \index{Explicabilidade}Explicabilidade. \index{IA Responsável}IA Responsável.
+\end{resumo}
+
+\begin{otherlanguage*}{english}
+\begin{resumo}[Abstract]
+\noindent This thesis proposes an integrated approach involving prediction and explainability in Machine Learning applied to churn prediction in telecommunications. Results demonstrate that optimized LightGBM achieves AUC-ROC of 0.94. 
+\noindent \textbf{Keywords:} Data Science. Machine Learning. Churn Prediction. Explainability. Responsible AI.
+\end{resumo}
+\end{otherlanguage*}
+\newpage
+
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\newpage
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\newpage
+
+% ============================================================
+% 1. INTRODUÇÃO
+% ============================================================
+\textual
+
+\chapter{Introdução}
+
+\begin{dica}
+\noindent\textbf{Dica ao autor:} A introdução de uma tese deve ser abrangente e profunda. Espera-se que o doutorando demonstre visão crítica do estado da arte e capacidade de identificar lacunas significativas. Deve conter: contextualização ampla, problema de pesquisa delimitado, hipóteses, objetivos, justificativa, contribuições esperadas e estrutura da tese.
+\end{dica}
+
+O \index{setor de telecomunicações}setor de telecomunicações brasileiro movimenta mais de R\$ 250 bilhões anuais e enfrenta taxas de \textit{churn}\index{churn} que podem ultrapassar 3\% ao mês~\cite{souza2023}. A \index{Inteligência Artificial}Inteligência Artificial~\cite{russell2022} tem transformado a predição de comportamento do consumidor. No entanto, regulamentações como a LGPD~\cite{castro2023} exigem que os modelos sejam não apenas precisos, mas também explicáveis. Este duplo desafio constitui o cerne da presente tese.
+
+\index{explicabilidade}Explicabilidade em \index{Machine Learning}\textit{Machine Learning}~\cite{castro2023} refere-se à capacidade de fornecer justificativas inteligíveis para decisões. A Equação~\ref{eq:shap} apresenta a formulação dos valores SHAP\index{SHAP}:
+
+\begin{equation}
+    \phi_i(f, \mathbf{x}) = \sum_{S \subseteq N \setminus \{i\}} \frac{|S|! (|N| - |S| - 1)!}{|N|!} \bigl[f(\mathbf{x}_{S \cup \{i\}}) - f(\mathbf{x}_S)\bigr]
+    \label{eq:shap}
+\end{equation}
+
+onde $\phi_i$ é a contribuição da \textit{feature} $i$ para a predição.
+
+\begin{dica}
+\noindent\textbf{Dica ao autor:} Equações complexas como~\ref{eq:shap} são esperadas em teses. Forneça também explicação intuitiva. A equação demonstra rigor; a explicação demonstra didática. Ambos são valorizados pela banca.
+\end{dica}
+
+\section{Problema e Hipóteses}
+
+\textbf{Pergunta central:} Como integrar predição e explicabilidade em modelos de \textit{Machine Learning} para previsão de \textit{churn} considerando dados desbalanceados e necessidade de transparência?
+
+\textbf{Hipóteses:}
+\begin{itemize}
+    \item \textbf{H1:} \textit{Gradient Boosting} supera métodos lineares na predição com dados desbalanceados.
+    \item \textbf{H2:} SMOTE e ADASYN melhoram o \textit{Recall} sem degradação proporcional da Precisão.
+    \item \textbf{H3:} Variáveis comportamentais são mais preditivas que demográficas no contexto brasileiro.
+\end{itemize}
+
+\section{Contribuições}
+
+(i) \textit{Framework} integrado de predição e explicabilidade~\cite{carvalho2024}; (ii) \textit{benchmark} público; (iii) análise de explicabilidade inédita; (iv) repositório aberto~\cite{moresi2023}. A Figura~\ref{fig:pipeline} ilustra o \textit{framework}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\textwidth]{pipeline_metodologico.eps}
+    \caption{\textit{Framework} metodológico integrado proposto.}
+    \label{fig:pipeline}
+    \small \textit{Fonte: Elaborado pelo autor (\the\year).}
+\end{figure}
+
+\section{Estrutura}
+
+Esta tese está organizada em oito capítulos: Introdução, Fundamentação Teórica, Metodologia, Estudo 1 (Predição), Estudo 2 (Explicabilidade), Discussão Geral, Considerações Finais e Apêndices.
+
+% ============================================================
+% 2. FUNDAMENTAÇÃO TEÓRICA
+% ============================================================
+\chapter{Fundamentação Teórica}
+
+\begin{dica}
+\noindent\textbf{Dica ao autor:} Em teses, a fundamentação deve ser exaustiva e crítica. Analise, compare, contraponha e identifique lacunas. Pode ocupar 30 a 50 páginas. Organize em seções que refletem os pilares conceituais da pesquisa.
+\end{dica}
+
+\section{Aprendizado Supervisionado}
+
+Dado $\mathcal{D} = \{(\mathbf{x}_i, y_i)\}_{i=1}^n$, busca-se $f: \mathbb{R}^p \to \{0,1\}$ minimizando o risco estrutural~\cite{hastie2009}:
+
+\begin{equation}
+    f^* = \arg\min_{f \in \mathcal{H}} \frac{1}{n} \sum_{i=1}^n L(y_i, f(\mathbf{x}_i)) + \lambda \Omega(f)
+    \label{eq:structural_risk}
+\end{equation}
+
+\section{Métodos de Ensemble}
+
+\subsection{Random Forest}
+
+O \index{Random Forest}\textit{Random Forest}~\citeonline{breiman2001} constrói $B$ árvores com \textit{bootstrap}. Predição final: moda das árvores.
+
+\subsection{LightGBM e XGBoost}
+
+O \index{LightGBM}\textit{LightGBM}~\cite{ke2017lightgbm} destaca-se por eficiência. A Figura~\ref{fig:importancia} ilustra a importância de \textit{features}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{importancia_features.eps}
+    \caption{Importância das \textit{features} no \textit{LightGBM}.}
+    \label{fig:importancia}
+    \small \textit{Fonte: Elaborado pelo autor (\the\year).}
+\end{figure}
+
+\section{Explicabilidade}
+
+\index{explicabilidade}Explicabilidade~\cite{castro2023} é requisito crítico para IA em setores regulados. Métodos: SHAP (Equação~\ref{eq:shap}), LIME~\cite{carvalho2024} e PDP.
+
+\section{Trabalhos Correlatos}
+
+Estudos de \citeonline{carvalho2024} e \citeonline{castro2023} investigaram aspectos específicos de explicabilidade, mas nenhum propôs \textit{framework} integrado como o aqui apresentado.
+
+% ============================================================
+% 3. METODOLOGIA
+% ============================================================
+\chapter{Metodologia}
+
+\begin{dica}
+\noindent\textbf{Dica ao autor:} A metodologia de uma tese deve ser robusta (15 a 25 páginas). Inclua: filosofia da pesquisa, abordagem, delineamento, população, instrumentos, coleta, análise, validação e aspectos éticos. A reprodutibilidade~\cite{moresi2023} depende da qualidade da descrição.
+\end{dica}
+
+A pesquisa é aplicada, quantitativa e explicativa. O \textit{framework} segue a Figura~\ref{fig:pipeline}.
+
+\section{Dados}
+
+Dataset anonimizado de 450.000 clientes de operadoras brasileiras (24 meses, 47 variáveis). A Tabela~\ref{tab:dicionario} detalha as variáveis.
+
+\input{tabelas/tab_dicionario_dados.tex}
+
+\section{Pré-processamento}
+
+Imputação, winsorização, \textit{one-hot encoding}, \textit{feature engineering} (12 novas variáveis), padronização.
+
+\section{Modelagem e Otimização}
+
+Seis algoritmos com \textit{Random Search} (100 iterações) e validação cruzada estratificada ($K=5$). Balanceamento: SMOTE, ADASYN e \textit{Undersampling}.
+
+\section{Métricas}
+
+AUC-ROC, Precisão, \textit{Recall}\index{Recall}, F1-Score, \textit{Log Loss}. Explicabilidade: SHAP, LIME, PDP.
+
+% ============================================================
+% 4. RESULTADOS - ESTUDO 1
+% ============================================================
+\chapter{Resultados --- Estudo 1: Predição}
+
+\begin{dica}
+\noindent\textbf{Dica ao autor:} Cada estudo pode constituir um capítulo. Apresente: análise exploratória, comparação de modelos, impacto de técnicas, síntese.
+\end{dica}
+
+\section{Análise Exploratória}
+
+Taxa de \textit{churn}: 18,3\%. Tabela~\ref{tab:estatisticas} apresenta descritivas.
+
+\input{tabelas/tab_estatisticas_descritivas}
+
+A Figura~\ref{fig:apendice_corr_tese} apresenta a matriz de correlação entre as variáveis preditoras.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.82\textwidth]{correlacao_heatmap.eps}
+    \caption{Matriz de correlação das 47 variáveis preditoras.}
+    \label{fig:apendice_corr_tese}
+    \small \textit{Fonte: Elaborado pelo autor (\the\year).}
+\end{figure}
+
+\section{Comparação de Modelos}
+
+Tabela~\ref{tab:comparacao} apresenta resultados. \textit{LightGBM} obteve AUC-ROC = 0,94 (confirmando H1). Figura~\ref{fig:roc} ilustra as curvas.
+
+\input{tabelas/tab_comparacao_modelos}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{curva_roc.eps}
+    \caption{Curvas ROC dos modelos otimizados.}
+    \label{fig:roc}
+    \small \textit{Fonte: Elaborado pelo autor (\the\year).}
+\end{figure}
+
+\section{Impacto do Balanceamento}
+
+SMOTE~\cite{carvalho2024} melhorou \textit{Recall} em 18,5\% (confirmando H2).
+
+\section{Análise de \textit{Features}}
+
+Variáveis comportamentais são mais preditivas (confirmando H3). Tabela~\ref{tab:matriz} detalha a matriz de confusão.
+
+\input{tabelas/tab_matriz_confusao}
+
+% ============================================================
+% 5. RESULTADOS - ESTUDO 2
+% ============================================================
+\chapter{Resultados --- Estudo 2: Explicabilidade}
+
+\section{SHAP Global}
+
+\texttt{satisfacao}, \texttt{num\_reclamacoes} e \texttt{tempo\_conta\_meses} dominam. Tabela~\ref{tab:coeficientes} complementa.
+
+\input{tabelas/tab_coeficientes_modelo}
+
+\section{SHAP/LIME Local}
+
+Cliente predito como \textit{churn} ($P = 0,87$): LIME atribuiu 42\% à baixa satisfação, 28\% a reclamações, 18\% a tempo de conta.
+
+\section{PDP}
+
+Clientes com satisfação $< 3$ têm probabilidade de \textit{churn} superior a 60\%.
+
+% ============================================================
+% 6. DISCUSSÃO GERAL
+% ============================================================
+\chapter{Discussão Geral}
+
+\begin{dica}
+\noindent\textbf{Dica ao autor:} A discussão geral integra os achados. Mostre a ``floresta'' após detalhar cada ``árvore''. Retome as hipóteses.
+\end{dica}
+
+O Estudo 1 confirma superioridade do \textit{Gradient Boosting}~\cite{hastie2009}. O Estudo 2 mostra que explicabilidade gera \textit{insights} acionáveis: variáveis comportamentais dominam, sugerindo foco em experiência do cliente. As três hipóteses foram confirmadas.
+
+% ============================================================
+% 7. CONSIDERAÇÕES FINAIS
+% ============================================================
+\chapter{Considerações Finais}
+
+Esta tese propôs \textit{framework} integrado de predição e explicabilidade. O \index{LightGBM}\textit{LightGBM} atingiu AUC-ROC de 0,94. A análise SHAP revelou dominância de variáveis comportamentais.
+
+\section{Contribuições}
+
+(i) \textit{Framework} metodológico; (ii) \textit{benchmark} público; (iii) análise de explicabilidade inédita; (iv) repositório aberto~\cite{moresi2023}.
+
+\section{Limitações}
+
+(i) Dados de duas operadoras (generalização limitada); (ii) não exploração de \textit{Deep Learning}~\cite{goodfellow2016}; (iii) custo computacional do SHAP para grandes volumes.
+
+\section{Trabalhos Futuros}
+
+(i) Expansão para mais operadoras; (ii) incorporação de \textit{Transformers}~\cite{vaswani2017}; (iii) desenvolvimento de ferramenta de explicabilidade em tempo real; (iv) validação com estudos de caso em operadoras.
+
+% ============================================================
+% ÍNDICE REMISSIVO
+% ============================================================
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{\indexname}
+\printindex
+
+% ============================================================
+% APÊNDICES
+% ============================================================
+\newpage
+\appendix
+\part*{Apêndices}
+\addcontentsline{toc}{chapter}{Apêndices}
+
+\chapter{Organização dos Experimentos}
+
+\begin{dica}
+\noindent\textbf{Dica ao autor:} Em teses, os apêndices devem conter material suplementar que detalhe a execução dos experimentos. Prefira tabelas e figuras que sintetizem a informação ao código-fonte bruto, mantendo o foco na comunicação dos resultados.
+\end{dica}
+
+A Tabela~\ref{tab:pipeline_tese} descreve os scripts que compõem a pipeline de experimentação.
+
+\begin{table}[htbp]
+\centering
+\caption{Pipeline experimental da tese --- scripts e artefatos gerados.}
+\label{tab:pipeline_tese}
+\small
+\begin{tabular}{cllp{5cm}}
+\toprule
+\textbf{Script} & \textbf{Etapa} & \textbf{Descrição} & \textbf{Arquivos Gerados} \\
+\midrule
+01 & Coleta & Geração de dados sintéticos (450k registros) & \texttt{dados/bruto/clientes.csv} \\
+02 & EDA & Análise exploratória com 47 variáveis & \texttt{resultados/figuras/*.png} \\
+03 & Pré-processamento & Feature engineering (12 novas variáveis) & \texttt{dados/\allowbreak processado/\allowbreak clientes\_processado.csv} \\
+04 & Treinamento & 6 algoritmos com Random Search (100 iterações) & \texttt{modelos/*.joblib} \\
+05 & Avaliação & Métricas com validação cruzada (K=5) & \texttt{tex/tabelas/*.tex} \\
+06 & Exportação & Conversão de figuras para EPS vetorial & \texttt{tex/figuras/*.eps} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A Figura~\ref{fig:apendice_distrib} apresenta a distribuição das principais variáveis do dataset, permitindo visualizar assimetrias e padrões nos dados.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.82\textwidth]{distribuicao_features.eps}
+    \caption{Distribuição das principais variáveis do dataset.}
+    \label{fig:apendice_distrib}
+    \small \textit{Fonte: Elaborado pelo autor (\the\year).}
+\end{figure}
+
+\chapter{Resultados Detalhados por \textit{Fold}}
+
+Cada \textit{fold} da validação cruzada ($K=5$) apresentou:
+
+\begin{table}[htbp]
+\centering
+\caption{Resultados por \textit{fold} --- \textit{LightGBM}.}
+\label{tab:folds}
+\small
+\begin{tabular}{lcccc}
+\toprule
+\textit{Fold} & AUC-ROC & Precisão & \textit{Recall} & F1 \\
+\midrule
+1 & 0,93 & 0,85 & 0,78 & 0,81 \\
+2 & 0,94 & 0,86 & 0,79 & 0,82 \\
+3 & 0,95 & 0,87 & 0,80 & 0,83 \\
+4 & 0,93 & 0,84 & 0,77 & 0,80 \\
+5 & 0,94 & 0,86 & 0,78 & 0,82 \\
+\midrule
+Média & 0,94 & 0,86 & 0,78 & 0,82 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\chapter{Glossário de Termos Técnicos}
+
+\index{glossário}\textbf{AUC-ROC} --- Área sob a curva ROC. Mede a capacidade discriminativa do modelo. \\
+\textbf{\index{Churn}Churn} --- Taxa de cancelamento de clientes. \\
+\textbf{\index{Ensemble}Ensemble} --- Combinação de múltiplos modelos para melhorar predições. \\
+\textbf{\index{LIME}LIME} --- \textit{Local Interpretable Model-agnostic Explanations}. \\
+\textbf{\index{PDP}PDP} --- \textit{Partial Dependence Plot}. Gráfico de dependência parcial. \\
+\textbf{\index{SHAP}SHAP} --- \textit{SHapley Additive exPlanations}. \\
+\textbf{\index{SMOTE}SMOTE} --- \textit{Synthetic Minority Over-sampling Technique}.
+
+% ============================================================
+% REFERÊNCIAS
+% ============================================================
+\newpage
+\bibliographystyle{abntex2-alf}
+\bibliography{referencias}
+
+\end{document}

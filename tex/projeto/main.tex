@@ -1,0 +1,265 @@
+\documentclass[
+    article,
+    12pt,
+    oneside,
+    a4paper,
+    english,
+    brazilian
+    ]{abntex2}
+
+% ============================================================
+% PACOTES
+% ============================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{indentfirst}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+% Matemática
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\numberwithin{equation}{section}
+
+% Código
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{url}
+
+% Citações ABNT
+\usepackage[alf]{abntex2cite}
+\usepackage{hyperref}
+\usepackage{csquotes}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.97,0.97,0.97}
+
+\lstdefinestyle{pythonstyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false, breaklines=true, captionpos=b,
+    keepspaces=true, numbers=left, numbersep=5pt,
+    showspaces=false, showstringspaces=false, showtabs=false,
+    tabsize=4, language=Python, frame=single, framerule=0.5pt,
+    rulecolor=\color{codegray},
+}
+\lstset{
+    style=pythonstyle,
+    inputencoding=utf8,
+    extendedchars=true,
+    literate=%
+        {á}{{\'a}}1 {à}{{\`a}}1 {â}{{\^a}}1 {ã}{{\~a}}1 {ä}{{\"a}}1
+        {é}{{\'e}}1 {è}{{\`e}}1 {ê}{{\^e}}1 {ë}{{\"e}}1
+        {í}{{\'i}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
+        {ó}{{\'o}}1 {ò}{{\`o}}1 {ô}{{\^o}}1 {õ}{{\~o}}1 {ö}{{\"o}}1
+        {ú}{{\'u}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
+        {ç}{{\c{c}}}1
+        {Á}{{\'A}}1 {À}{{\`A}}1 {Â}{{\^A}}1 {Ã}{{\~A}}1 {Ä}{{\"A}}1
+        {É}{{\'E}}1 {È}{{\`E}}1 {Ê}{{\^E}}1 {Ë}{{\"E}}1
+        {Í}{{\'I}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
+        {Ó}{{\'O}}1 {Ò}{{\`O}}1 {Ô}{{\^O}}1 {Õ}{{\~O}}1 {Ö}{{\"O}}1
+        {Ú}{{\'U}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
+        {Ç}{{\c{C}}}1
+}
+
+\graphicspath{{figuras/}}
+
+% ============================================================
+% CONFIGURAÇÕES
+% ============================================================
+\geometry{top=3cm, left=3cm, right=2cm, bottom=2cm}
+
+\setlength{\absleftindent}{0cm}
+\setlength{\absrightindent}{0cm}
+\renewcommand{\abstracttextfont}{\normalfont\normalsize}
+
+% ============================================================
+% METADADOS
+% ============================================================
+\titulo{%
+    \vspace*{-3.5cm}
+    \begin{minipage}{1.0\textwidth}
+        \centering
+        \includegraphics[width=0.1\textwidth]{brasao_ufpb.png}
+    \end{minipage}%
+    \vspace{0.5cm}
+    \begin{minipage}{1.0\textwidth}
+        \centering
+        \normalsize
+        \textbf{UNIVERSIDADE FEDERAL DA PARAÍBA -- UFPB} \\
+        \textbf{CENTRO DE CIÊNCIAS SOCIAIS APLICADAS -- CCSA} \\
+        \textbf{PROGRAMA DE PÓS-GRADUAÇÃO EM CIÊNCIA DE DADOS}
+    \end{minipage}%
+    \vspace{1cm}
+    \Large \textbf{Projeto de Pesquisa: Previsão de Evasão de Clientes Usando Aprendizado de Máquina}
+}
+\providecommand{\theforeigntitle}{}
+
+\autor{
+    \textbf{Nome do Aluno(a)} \\
+    \small \texttt{email.do.aluno@academico.ufpb.br} \\
+    \vspace{0.5cm} \\
+    Orientador: Prof. Dr. Nome do Orientador(a) \\
+    \small \texttt{email.do.orientador@ufpb.br}
+}
+
+\data{\today}
+
+\begin{document}
+
+\pretextual
+\maketitle
+\newpage
+
+% ============================================================
+% 1. INTRODUÇÃO
+% ============================================================
+\textual
+
+\section{Introdução}
+
+A retenção de clientes é um dos principais desafios no setor de telecomunicações. O fenômeno do \textit{churn} representa perda significativa de receita, sendo que adquirir um novo cliente custa de cinco a sete vezes mais do que reter um existente \cite{provost2013}. Nesse contexto, a aplicação de técnicas de Aprendizado de Máquina (\textit{Machine Learning}) tem se mostrado eficaz na identificação precoce de clientes com alto risco de evasão \cite{hastie2009}.
+
+Este projeto de pesquisa propõe o desenvolvimento de um sistema preditivo de \textit{churn} baseado em modelos supervisionados de classificação, seguindo um pipeline reprodutível de Ciência de Dados.
+
+\section{Problemática}
+
+As empresas de telecomunicações enfrentam dificuldades em identificar proativamente clientes propensos ao cancelamento. A ausência de modelos preditivos eficazes leva a ações reativas e custosas. Diante disso, questiona-se: \textbf{como utilizar dados históricos de clientes para construir modelos preditivos capazes de antecipar o \textit{churn} com alta acurácia?}
+
+\section{Justificativa}
+
+A relevância deste projeto reside na oportunidade de reduzir custos operacionais por meio da retenção preventiva de clientes. Além disso, a construção de um pipeline reprodutível contribui para a literatura ao fornecer uma referência metodológica para trabalhos futuros. Do ponto de vista acadêmico, o projeto integra conceitos de Ciência de Dados, Estatística e Aprendizado de Máquina, consolidando a formação do pesquisador.
+
+% ============================================================
+% 4. OBJETIVOS
+% ============================================================
+\section{Objetivos}
+
+\subsection{Objetivo Geral}
+
+Desenvolver e comparar modelos de \textit{Machine Learning} para a previsão de \textit{churn} de clientes em telecomunicações, com ênfase na reprodutibilidade dos resultados.
+
+\subsection{Objetivos Específicos}
+
+\begin{enumerate}
+    \item Realizar análise exploratória dos dados de clientes para identificar padrões e \textit{outliers};
+    \item Aplicar técnicas de pré-processamento e engenharia de \textit{features};
+    \item Treinar e validar modelos de Regressão Logística, \textit{Random Forest} e \textit{LightGBM};
+    \item Comparar o desempenho dos modelos utilizando métricas como AUC-ROC, F1-Score e acurácia;
+    \item Documentar o pipeline de forma que os experimentos sejam integralmente reprodutíveis.
+\end{enumerate}
+
+% ============================================================
+% 5. REVISÃO DE LITERATURA
+% ============================================================
+\section{Revisão de Literatura}
+
+A previsão de \textit{churn} tem sido amplamente estudada na literatura. \citeonline{ahmad2019} aplicaram modelos de \textit{Machine Learning} em uma plataforma de \textit{Big Data} para prever evasão em telecomunicações, obtendo resultados promissores com \textit{Random Forest} e \textit{Gradient Boosting}.
+
+No contexto brasileiro, \citeonline{silva2022} desenvolveram um modelo preditivo para inadimplência bancária, demonstrando a aplicabilidade das técnicas em dados nacionais. Estudos recentes~\cite{pecanha2024} destacam a importância da reprodutibilidade em experimentos de Ciência de Dados, propondo \textit{frameworks} para versionamento de dados e modelos.
+
+Os fundamentos teóricos dos algoritmos utilizados --- Regressão Logística, \textit{Random Forest} e \textit{LightGBM} --- são amplamente discutidos por \citeonline{hastie2009}, \citeonline{breiman2001} e \citeonline{ke2017lightgbm}, respectivamente.
+
+% ============================================================
+% 6. METODOLOGIA
+% ============================================================
+\section{Metodologia}
+
+A metodologia será estruturada nas seguintes etapas, conforme ilustrado na Figura~\ref{fig:pipeline}:
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.92\textwidth]{pipeline_metodologico.eps}
+    \caption{Pipeline metodológico proposto.}
+    \label{fig:pipeline}
+    \small \textit{Fonte: Elaborado pelo autor (\the\year).}
+\end{figure}
+
+\subsection{Coleta de Dados}
+
+Será utilizado um dataset fictício simulando dados de clientes de telecomunicações, contendo \num{1000} registros e 12 variáveis, conforme o dicionário apresentado na Tabela~\ref{tab:dicionario}.
+
+\input{tabelas/tab_dicionario_dados.tex}
+
+\subsection{Pré-processamento}
+
+As etapas de pré-processamento incluirão: imputação de valores ausentes, tratamento de \textit{outliers}, codificação de variáveis categóricas e normalização dos dados.
+
+\subsection{Treinamento e Validação}
+
+Serão treinados três modelos --- Regressão Logística, \textit{Random Forest} e \textit{LightGBM} --- com validação cruzada \textit{Stratified K-Fold} ($K = 5$) e divisão treino/teste de 80\%/20\%.
+
+\subsection{Avaliação}
+
+Os modelos serão comparados pelas métricas de AUC-ROC, F1-Score e acurácia, com análise da matriz de confusão do melhor modelo.
+
+% ============================================================
+% 7. CRONOGRAMA
+% ============================================================
+\section{Cronograma}
+
+\begin{table}[htbp]
+\centering
+\caption{Cronograma de execução do projeto}
+\label{tab:cronograma}
+\small
+\begin{tabular}{p{5.2cm}cccccc}
+\toprule
+\textbf{Etapa} & \textbf{Mês 1} & \textbf{Mês 2} & \textbf{Mês 3} & \textbf{Mês 4} & \textbf{Mês 5} & \textbf{Mês 6} \\
+\midrule
+Revisão bibliográfica         & $\bullet$ & $\bullet$ & & & & \\
+Coleta e preparação dos dados & & $\bullet$ & $\bullet$ & & & \\
+Análise exploratória          & & $\bullet$ & $\bullet$ & & & \\
+Treinamento dos modelos       & & & $\bullet$ & $\bullet$ & & \\
+Avaliação e refinamento       & & & & $\bullet$ & $\bullet$ & \\
+Redação do relatório final    & & & & & $\bullet$ & $\bullet$ \\
+\bottomrule
+\end{tabular}
+\vspace{2mm}
+\fonte{Elaborado pelo autor (\the\year)}
+\end{table}
+
+% ============================================================
+% 8. ORÇAMENTO
+% ============================================================
+\section{Orçamento}
+
+O projeto será desenvolvido com software livre (\textit{Python}, \textit{Scikit-learn}) e infraestrutura computacional já disponível, não havendo custos adicionais significativos. Os principais recursos necessários são:
+
+\begin{itemize}
+    \item Computador com processador multi-core e mínimo de 8 GB de RAM;
+    \item Ambiente \textit{Python} com bibliotecas científicas (Jupyter, Pandas, Scikit-learn, Matplotlib);
+    \item Sistema de versionamento Git e repositório no GitHub.
+\end{itemize}
+
+% ============================================================
+% 9. CONSIDERAÇÕES FINAIS
+% ============================================================
+\section{Considerações Finais}
+
+Este projeto de pesquisa propõe uma abordagem sistematizada e reprodutível para a previsão de \textit{churn} de clientes utilizando Aprendizado de Máquina. Espera-se que os resultados contribuam tanto para a prática empresarial, com a identificação precoce de clientes propensos à evasão, quanto para a academia, fornecendo um \textit{framework} metodológico replicável.
+
+% ============================================================
+% REFERÊNCIAS
+% ============================================================
+\bibliographystyle{abntex2-alf}
+\bibliography{referencias}
+
+\end{document}
