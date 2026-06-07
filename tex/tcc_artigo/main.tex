@@ -83,18 +83,18 @@
     inputencoding=utf8,
     extendedchars=true,
     literate=%
-        {á}{{\'a}}1 {à}{{\`a}}1 {â}{{\^a}}1 {ã}{{\~a}}1 {ä}{{\"a}}1
-        {é}{{\'e}}1 {è}{{\`e}}1 {ê}{{\^e}}1 {ë}{{\"e}}1
-        {í}{{\'i}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
-        {ó}{{\'o}}1 {ò}{{\`o}}1 {ô}{{\^o}}1 {õ}{{\~o}}1 {ö}{{\"o}}1
-        {ú}{{\'u}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
-        {ç}{{\c{c}}}1
-        {Á}{{\'A}}1 {À}{{\`A}}1 {Â}{{\^A}}1 {Ã}{{\~A}}1 {Ä}{{\"A}}1
-        {É}{{\'E}}1 {È}{{\`E}}1 {Ê}{{\^E}}1 {Ë}{{\"E}}1
-        {Í}{{\'I}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
-        {Ó}{{\'O}}1 {Ò}{{\`O}}1 {Ô}{{\^O}}1 {Õ}{{\~O}}1 {Ö}{{\"O}}1
-        {Ú}{{\'U}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
-        {Ç}{{\c{C}}}1
+        {á}{{á}}1 {à}{{à}}1 {â}{{â}}1 {ã}{{ã}}1 {ä}{{\"a}}1
+        {é}{{é}}1 {è}{{\`e}}1 {ê}{{ê}}1 {ë}{{\"e}}1
+        {í}{{í}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
+        {ó}{{ó}}1 {ò}{{\`o}}1 {ô}{{ô}}1 {õ}{{õ}}1 {ö}{{\"o}}1
+        {ú}{{ú}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
+        {ç}{{ç}}1
+        {Á}{{Á}}1 {À}{{À}}1 {Â}{{Â}}1 {Ã}{{Ã}}1 {Ä}{{\"A}}1
+        {É}{{É}}1 {È}{{\`E}}1 {Ê}{{Ê}}1 {Ë}{{\"E}}1
+        {Í}{{Í}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
+        {Ó}{{Ó}}1 {Ò}{{\`O}}1 {Ô}{{Ô}}1 {Õ}{{Õ}}1 {Ö}{{\"O}}1
+        {Ú}{{Ú}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
+        {Ç}{{Ç}}1
 }
 
 \graphicspath{{figuras/}}
@@ -141,6 +141,13 @@
 % RESUMO
 % ============================================================
 \begin{resumo}
+
+\begin{dica}
+\noindent\textbf{Dica ao autor — Como escrever o Resumo:}
+
+O resumo é o ``cartão de visitas'' do seu trabalho. Muitos avaliadores decidem a qualidade do trabalho a partir dele. Siga a estrutura \textbf{IMRAD}: (1)~\textbf{Contexto}: Qual é o problema? (1-2 frases); (2)~\textbf{Objetivo}: O que o trabalho faz? (1 frase); (3)~\textbf{Método}: Como foi feito? (1-2 frases); (4)~\textbf{Resultados}: O que foi encontrado? (1-2 frases, \textbf{com números!}); (5)~\textbf{Conclusão}: Qual a contribuição? (1 frase). Tamanho recomendado: 150 a 250 palavras para artigos e TCCs. Escreva o resumo \textbf{por último}, quando todo o trabalho estiver pronto. Escolha 3 a 5 palavras-chave que representem os conceitos centrais, separadas por ponto final, em ordem alfabética ou de relevância.
+\end{dica}
+
 \noindent Este trabalho investiga a aplicação de técnicas de \textit{Machine Learning} para a previsão de \textit{churn} de clientes no setor de telecomunicações. Foram comparados três modelos preditivos --- Regressão Logística, \textit{Random Forest} e \textit{LightGBM} --- utilizando um pipeline reprodutível de Ciência de Dados. Os resultados obtidos demonstram que o modelo \textit{LightGBM} apresentou desempenho superior, alcançando AUC-ROC de 0,877 e acurácia de 82,5\%. O estudo contribui para a literatura ao fornecer uma abordagem comparativa sistematizada e um repositório reprodutível que pode ser utilizado como referência metodológica para trabalhos de conclusão de curso.
 \newline
 \noindent \textbf{Palavras-chave:} Ciência de Dados. \textit{Machine Learning}. Previsão de \textit{Churn}. Classificação Binária. Reprodutibilidade.
@@ -163,7 +170,18 @@
 \section{Introdução}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} A introdução deve responder a quatro perguntas fundamentais: (1) O que será estudado? (2) Por que isso é relevante? (3) Qual é o objetivo do trabalho? (4) Como o texto está organizado? Evite citações longas nesta seção; prefira contextualizar com suas próprias palavras.
+\noindent\textbf{Dica ao autor — Como escrever a Introdução:}
+
+A introdução funciona como um \textbf{funil}: começa ampla (contexto geral do tema) e vai estreitando até o problema específico. Ela deve responder a seis perguntas:
+\begin{enumerate}
+    \item \textbf{Qual é o tema?} — Contextualize em 1-2 parágrafos, situando o leitor.
+    \item \textbf{Por que é importante?} — Apresente a relevância com dados ou referências.
+    \item \textbf{O que ainda não sabemos?} — Identifique a lacuna (\textit{gap}) na literatura.
+    \item \textbf{O que este trabalho faz?} — Formule o objetivo geral de forma clara.
+    \item \textbf{Quais são os objetivos específicos?} — Liste de forma mensurável (verbos de ação).
+    \item \textbf{Como o texto está organizado?} — Descreva brevemente as seções seguintes.
+\end{enumerate}
+\textbf{Erro comum:} Começar com a definição do termo central (``\textit{Machine Learning} é uma subárea da IA que...''). Isso pertence à Fundamentação Teórica, não à Introdução. Aqui, \textbf{contextualize o problema}. Tamanho recomendado: 2-3 páginas (artigo/TCC artigo).
 \end{dica}
 
 A retenção de clientes é um dos principais desafios enfrentados pelas empresas de telecomunicações no cenário competitivo atual. O fenômeno do \textit{churn}\footnote{O termo \textit{churn} , ou evasão de clientes, representa a taxa de cancelamento de serviços por parte dos assinantes. É uma métrica crítica em negócios baseados em assinatura, pois o custo de adquirir um novo cliente pode ser até sete vezes maior que o de reter um existente.}, ou evasão de clientes, representa uma perda significativa de receita, sendo que o custo de aquisição de novos clientes é estimado em cinco a sete vezes maior do que o custo de retenção \cite{provost2013}.
@@ -193,7 +211,15 @@ Como objetivos específicos, busca-se: (i) realizar análise exploratória dos d
 \section{Fundamentação Teórica}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} A fundamentação teórica deve demonstrar seu domínio sobre o estado da arte do tema. Organize-a em subseções temáticas. Use \texttt{\textbackslash citeonline\{chave\}} para citações em que o autor é parte integrante da frase, e \texttt{\textbackslash cite\{chave\}} para citações indiretas no final do período.
+\noindent\textbf{Dica ao autor — Como escrever a Fundamentação Teórica:}
+
+Esta seção demonstra que você \textbf{domina} o assunto. Mas dominar não é listar --- é \textbf{sintetizar criticamente}. Organize por \textbf{eixos temáticos} (não por autor). Por exemplo: primeiro defina os conceitos gerais (aprendizado supervisionado), depois os modelos específicos (Regressão Logística, RF, LightGBM), e finalmente as métricas de avaliação.
+
+\textbf{O que NÃO fazer} (colagem de citações): ``Segundo Silva (2020), X. De acordo com Santos (2021), X. Para Oliveira (2022), X.'' ← Isso é um catálogo.
+
+\textbf{O que FAZER} (síntese): ``A definição de X evoluiu. Enquanto Silva (2020) enfatiza A, Santos (2021) amplia ao incluir B. Oliveira (2022) propõe uma integração de ambos, argumentando que C.'' ← Aqui você compara, conecta e avalia.
+
+Inclua uma subseção de \textbf{Trabalhos Correlatos}: o que já foi feito de similar? Quais resultados obtiveram? \textbf{Como seu trabalho se diferencia?} Use \texttt{\textbackslash citeonline\{\}} quando o autor é sujeito da frase; \texttt{\textbackslash cite\{\}} para citações indiretas ao final do período.
 \end{dica}
 
 \subsection{Modelos de Classificação Supervisionada}
@@ -266,7 +292,18 @@ Em estudo recente, \citeonline{fernandes2023} aplicaram técnicas de \textit{Mac
 \section{Metodologia}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} A metodologia deve ser descrita com detalhamento suficiente para que qualquer pesquisador independente possa reproduzir o experimento. Inclua: fonte dos dados, período de coleta, tamanho da amostra, etapas de pré-processamento, algoritmos utilizados, estratégia de validação e métricas de avaliação.
+\noindent\textbf{Dica ao autor — Como escrever a Metodologia:}
+
+A metodologia é o seu \textbf{protocolo de laboratório}. Um pesquisador independente deve conseguir reproduzir todo o estudo lendo apenas esta seção. Inclua obrigatoriamente:
+\begin{itemize}
+    \item \textbf{Dados:} Fonte, volume, período de coleta, formato, dicionário de variáveis.
+    \item \textbf{Pré-processamento:} Tratamento de \textit{missing values} (qual estratégia e por quê), \textit{outliers}, codificação, normalização.
+    \item \textbf{Divisão treino/teste:} Proporção e método (\textit{holdout}, \textit{K-fold}, \textit{stratified}).
+    \item \textbf{Algoritmos:} Quais, com quais hiperparâmetros, e por que foram escolhidos.
+    \item \textbf{Métricas:} Quais métricas de avaliação e por que são adequadas para o problema.
+    \item \textbf{Reprodutibilidade:} \textit{Seed}, versões de software, link do repositório.
+\end{itemize}
+Use verbos no \textbf{pretérito perfeito} se os experimentos já foram realizados (``foram treinados'', ``utilizou-se''), ou no \textbf{futuro} se for um projeto de pesquisa (``serão treinados'').
 \end{dica}
 
 A metodologia deste trabalho segue o pipeline padrão de Ciência de Dados, conforme ilustrado na Figura~\ref{fig:pipeline}. O repositório do projeto\footnote{Repositório disponível em \url{https://github.com/seu-usuario/projeto-tcc}} contém todos os scripts e dados necessários para reprodução integral dos resultados.
@@ -299,7 +336,17 @@ Foram treinados três modelos: Regressão Logística ($C = 1.0$), \textit{Random
 \section{Resultados e Discussão}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} Apresente os resultados de forma objetiva, guiando o leitor pelas tabelas e figuras. Não se limite a descrever o óbvio; interprete os resultados à luz da literatura. Compare seus achados com os de trabalhos correlatos e aponte possíveis explicações para diferenças ou similaridades.
+\noindent\textbf{Dica ao autor — Como escrever Resultados e Discussão:}
+
+Esta é a seção mais importante. Siga o padrão \textbf{OII} para cada resultado:
+\begin{enumerate}
+    \item \textbf{Observação:} O que os dados mostram? (fato objetivo)
+    \item \textbf{Interpretação:} O que isso significa? (sua análise)
+    \item \textbf{Implicação:} Como se relaciona com a literatura? (conexão)
+\end{enumerate}
+\textbf{Exemplo:} ``O LightGBM obteve AUC-ROC de 0,877, superando a Regressão Logística (0,823). [Observação] O desempenho superior pode ser atribuído à capacidade de capturar interações não-lineares. [Interpretação] Este resultado corrobora Fernandes (2023), que obteve AUC de 0,89 com dados reais. [Implicação]''
+
+\textbf{Erros comuns:} (1)~Apenas descrever tabelas sem interpretar: ``A Tabela~3 mostra os resultados.'' — e daí? (2)~Não comparar com a literatura. (3)~Ignorar resultados negativos --- se algo não funcionou, explique por quê. Toda figura e tabela \textbf{deve ser mencionada e interpretada no texto}.
 \end{dica}
 
 \subsection{Análise Exploratória}
@@ -338,7 +385,21 @@ O melhor desempenho do \textit{LightGBM} pode ser atribuído à sua capacidade d
 \section{Considerações Finais}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} As considerações finais devem retomar os objetivos propostos na introdução e avaliar se foram alcançados. Inclua limitações do estudo e sugestões concretas para trabalhos futuros. Evite introduzir novos argumentos ou referências não discutidas anteriormente.
+\noindent\textbf{Dica ao autor — Como escrever as Considerações Finais:}
+
+A conclusão \textbf{não} é um resumo do trabalho. É uma avaliação de fechamento. Estruture assim:
+\begin{enumerate}
+    \item \textbf{Retomada dos objetivos:} Cada objetivo específico foi alcançado? Avalie honestamente.
+    \item \textbf{Contribuições:} O que o trabalho acrescenta ao campo? (1 parágrafo)
+    \item \textbf{Limitações:} O que não foi possível fazer e por quê? Reconhecer limitações demonstra \textbf{maturidade intelectual} --- os avaliadores valorizam isso.
+    \item \textbf{Trabalhos futuros:} Sugestões concretas e viáveis para pesquisas subsequentes.
+\end{enumerate}
+\textbf{Regras de ouro:}
+\begin{itemize}
+    \item Não introduza referências novas nem dados que não foram discutidos.
+    \item Não comece com ``Em suma'' ou ``Portanto'' --- comece com conteúdo substantivo.
+    \item Seja específico nos trabalhos futuros: ``testar SMOTE para balanceamento'' é melhor que ``explorar outras técnicas''.
+\end{itemize}
 \end{dica}
 
 Este trabalho investigou a aplicação de técnicas de \textit{Machine Learning} para a previsão de \textit{churn} de clientes em telecomunicações. O objetivo geral foi alcançado com êxito, demonstrando que modelos de \textit{gradient boosting} apresentam desempenho superior para este tipo de problema. A principal contribuição reside na construção de um pipeline reprodutível, com scripts versionados e documentados, que pode servir como referência metodológica.

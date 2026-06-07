@@ -86,18 +86,18 @@
     inputencoding=utf8,
     extendedchars=true,
     literate=%
-        {á}{{\'a}}1 {à}{{\`a}}1 {â}{{\^a}}1 {ã}{{\~a}}1 {ä}{{\"a}}1
-        {é}{{\'e}}1 {è}{{\`e}}1 {ê}{{\^e}}1 {ë}{{\"e}}1
-        {í}{{\'i}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
-        {ó}{{\'o}}1 {ò}{{\`o}}1 {ô}{{\^o}}1 {õ}{{\~o}}1 {ö}{{\"o}}1
-        {ú}{{\'u}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
-        {ç}{{\c{c}}}1
-        {Á}{{\'A}}1 {À}{{\`A}}1 {Â}{{\^A}}1 {Ã}{{\~A}}1 {Ä}{{\"A}}1
-        {É}{{\'E}}1 {È}{{\`E}}1 {Ê}{{\^E}}1 {Ë}{{\"E}}1
-        {Í}{{\'I}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
-        {Ó}{{\'O}}1 {Ò}{{\`O}}1 {Ô}{{\^O}}1 {Õ}{{\~O}}1 {Ö}{{\"O}}1
-        {Ú}{{\'U}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
-        {Ç}{{\c{C}}}1
+        {á}{{á}}1 {à}{{à}}1 {â}{{â}}1 {ã}{{ã}}1 {ä}{{\"a}}1
+        {é}{{é}}1 {è}{{\`e}}1 {ê}{{ê}}1 {ë}{{\"e}}1
+        {í}{{í}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
+        {ó}{{ó}}1 {ò}{{\`o}}1 {ô}{{ô}}1 {õ}{{õ}}1 {ö}{{\"o}}1
+        {ú}{{ú}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
+        {ç}{{ç}}1
+        {Á}{{Á}}1 {À}{{À}}1 {Â}{{Â}}1 {Ã}{{Ã}}1 {Ä}{{\"A}}1
+        {É}{{É}}1 {È}{{\`E}}1 {Ê}{{Ê}}1 {Ë}{{\"E}}1
+        {Í}{{Í}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
+        {Ó}{{Ó}}1 {Ò}{{\`O}}1 {Ô}{{Ô}}1 {Õ}{{Õ}}1 {Ö}{{\"O}}1
+        {Ú}{{Ú}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
+        {Ç}{{Ç}}1
 }
 
 \graphicspath{{figuras/}}
@@ -180,7 +180,18 @@
 \chapter{Introdução}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} A introdução de um TCC com estrutura de capítulos deve apresentar o tema de forma ampla, estreitando gradualmente até o problema específico. Inclua: contextualização, problema de pesquisa, justificativa, objetivos (geral e específicos) e a estrutura do texto. Cada objetivo específico deve ser retomado nos resultados.
+\noindent\textbf{Dica ao autor \textemdash\ Como escrever a Introdução (TCC Monografia):}
+
+A introdução de um TCC com estrutura de capítulos deve seguir o formato \textbf{funil}: começa ampla e estreita até o problema específico. Ela deve conter:
+\begin{enumerate}
+    \item \textbf{Contextualização:} Situe o leitor no tema geral (1-2 parágrafos).
+    \item \textbf{Problema de pesquisa:} Formule como uma \textbf{pergunta} explícita.
+    \item \textbf{Justificativa:} Por que este estudo \textit{é} relevante? (dados, lacuna).
+    \item \textbf{Objetivo geral:} Uma frase clara, mensurável.
+    \item \textbf{Objetivos específicos:} Lista com verbos de ação (``analisar'', ``comparar'', ``avaliar'') \textemdash\ cada um deve ser retomado nos Resultados.
+    \item \textbf{Estrutura do texto:} Descreva brevemente os capítulos seguintes.
+\end{enumerate}
+\textbf{Erro comum:} Começar com definições (``\textit{Machine Learning} é...'') \textemdash\ isso pertence à Fundamentação. Aqui, \textbf{contextualize o problema real}. Tamanho recomendado: 3-5 páginas.
 \end{dica}
 
 No cenário atual de telecomunicações, a retenção de clientes tornou-se um diferencial competitivo crucial\index{retenção de clientes}. O fenômeno do \textit{churn}\footnote{A palavra \textit{churn} origina-se do inglês e significa ``agitar'' ou ``bater''. No contexto de negócios, metaforicamente descreve a ``agitação'' causada pela saída de clientes. O termo foi popularizado no setor de telecomunicações nos anos 1990 e hoje é utilizado em diversos segmentos como SaaS, bancos e seguros.} representa a taxa de cancelamento de serviços e impacta diretamente a receita das operadoras. Estima-se que adquirir um novo cliente custe de cinco a sete vezes mais do que reter um existente~\cite{provost2013}.
@@ -207,7 +218,13 @@ Por fim, este capítulo introdutório delineia a estrutura do trabalho: o Capít
 \chapter{Fundamentação Teórica}\label{cap:fundamentacao}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} Organize a fundamentação teórica de forma hierárquica: comece com conceitos mais gerais e vá se aprofundando. Cada subseção deve ter um propósito claro e estar conectada ao seu objeto de estudo. Evite o erro comum de ``despejar'' referências sem análise crítica. Use citações do tipo \texttt{\textbackslash citeonline{}} quando o autor for sujeito da frase, e \texttt{\textbackslash cite{}} para informações ao final do período.
+\noindent\textbf{Dica ao autor \textemdash\ Fundamentação Teórica (TCC Monografia):}
+
+Organize a fundamentação de forma \textbf{hierárquica}: conceitos gerais antes dos específicos. Cada subseção deve ter propósito claro e estar \textbf{conectada ao seu objeto de estudo}.
+
+Evite o erro de ``despejar'' referências sem análise crítica. Não basta dizer ``Segundo X, ...''; você deve \textbf{comparar, contrastar e sintetizar}: ``Enquanto X enfatiza A, Y amplia ao incluir B. Este trabalho segue a abordagem de Z, porque...''.
+
+Sugere-se pelo menos três eixos: (1)~o domínio do problema (\textit{churn}, telecomunicações); (2)~as técnicas computacionais (algoritmos, métricas); (3)~o referencial metodológico (validação, reprodutibilidade). Inclua \textbf{Trabalhos Correlatos} como subseção: o que já foi feito? Que resultados obtiveram? Como seu trabalho se diferencia? Use \texttt{\textbackslash citeonline{}} quando o autor é sujeito; \texttt{\textbackslash cite{}} para citações indiretas.
 \end{dica}
 
 \section{Aprendizado de Máquina Supervisionado}
@@ -260,7 +277,18 @@ As métricas de avaliação para classificação, como AUC-ROC e \textit{F1-Scor
 \chapter{Metodologia}\label{cap:metodologia}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} A metodologia deve ser descrita como um ``protocolo de experimento''. Um pesquisador independente deve conseguir reproduzir todo o estudo apenas lendo esta seção. Inclua: fonte e volume dos dados, período de coleta, etapas de pré-processamento, algoritmos com hiperparâmetros, estratégia de validação e métricas. A transparência metodológica é condição para a reprodutibilidade~\cite{lima2024}.
+\noindent\textbf{Dica ao autor \textemdash\ Metodologia (TCC Monografia):}
+
+A metodologia é o \textbf{protocolo de laboratório} do seu trabalho. Um pesquisador independente deve conseguir reproduzir todo o estudo lendo apenas este capítulo. Inclua:
+\begin{itemize}
+    \item \textbf{Dados:} Fonte, volume, período de coleta, formato, dicionário de variáveis.
+    \item \textbf{Pré-processamento:} Tratamento de \textit{missing values}, \textit{outliers}, codificação, normalização \textemdash\ com justificativa para cada escolha.
+    \item \textbf{Divisão treino/teste:} Proporção e método (\textit{holdout}, \textit{K-fold}, \textit{stratified}).
+    \item \textbf{Algoritmos:} Quais, com quais hiperparâmetros, e por que foram escolhidos.
+    \item \textbf{Métricas:} Quais métricas e por que são adequadas para o problema.
+    \item \textbf{Reprodutibilidade:} \textit{Seed}, versões de software, link do repositório.
+\end{itemize}
+A transparência metodológica é condição para a reprodutibilidade. Tamanho recomendado: 5-8 páginas.
 \end{dica}
 
 A metodologia segue o pipeline de \index{Ciência de Dados}Ciência de Dados ilustrado na Figura~\ref{fig:pipeline}. O repositório completo está disponível online\footnote{Disponível em: \url{https://github.com/seu-usuario/projeto-tcc}. Acesso em: \today.}.
@@ -293,7 +321,15 @@ Foram treinados três modelos: Regressão Logística ($C=1.0$), \textit{Random F
 \chapter{Resultados e Discussão}\label{cap:resultados}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} Na seção de resultados, cada tabela e figura deve ser mencionada e interpretada no texto. Explore: o que os dados mostram? Há padrões inesperados? Os resultados confirmam ou contradizem a literatura? Use o presente do indicativo para descrever os achados.
+\noindent\textbf{Dica ao autor \textemdash\ Resultados e Discussão:}
+
+Este é o capítulo mais importante do TCC. Organize-o em seções que correspondam aos objetivos específicos. Para cada resultado, siga o padrão \textbf{OII}:
+\begin{enumerate}
+    \item \textbf{Observação:} O que os dados mostram? (fato)
+    \item \textbf{Interpretação:} O que isso significa? (análise)
+    \item \textbf{Implicação:} Como se relaciona com a literatura? (conexão)
+\end{enumerate}
+\textbf{Erros comuns:} (1)~Apenas descrever tabelas sem interpretar. (2)~Não comparar com a literatura. (3)~Ignorar resultados negativos. Use o \textbf{presente do indicativo} para descrever os achados.
 \end{dica}
 
 \section{Análise Exploratória}
@@ -336,7 +372,16 @@ O desempenho superior do \index{LightGBM}\textit{LightGBM} pode ser atribuído �
 \chapter{Considerações Finais}\label{cap:conclusao}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} As considerações finais devem retomar os objetivos propostos na Introdução e avaliar em que medida foram cumpridos. Seja honesto sobre as limitações. Sugira direções concretas para trabalhos futuros --- os avaliadores valorizam a maturidade intelectual demonstrada ao reconhecer as fronteiras do próprio estudo.
+\noindent\textbf{Dica ao autor \textemdash\ Considerações Finais:}
+
+A conclusão \textbf{não} é um resumo. É uma avaliação de fechamento:
+\begin{enumerate}
+    \item \textbf{Retomada dos objetivos:} Cada objetivo específico foi alcançado? Avalie honestamente.
+    \item \textbf{Contribuições:} O que o trabalho acrescenta ao campo?
+    \item \textbf{Limitações:} Reconheça com honestidade \textemdash\ os avaliadores valorizam a maturidade intelectual.
+    \item \textbf{Trabalhos futuros:} Sugestões concretas e viáveis.
+\end{enumerate}
+Não introduza referências novas nem dados que não foram discutidos. Seja específico nos trabalhos futuros.
 \end{dica}
 
 O objetivo geral proposto foi alcançado: os três modelos foram implementados, validados e comparados em um pipeline reprodutível. O \textit{LightGBM} apresentou o melhor desempenho, consistente com a literatura~\cite{fernandes2023}.

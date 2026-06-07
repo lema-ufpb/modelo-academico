@@ -42,6 +42,14 @@
 \usepackage{hyperref}
 \usepackage{csquotes}
 
+% Ambiente para dicas pedagógicas
+\newenvironment{dica}{%
+    \par\medskip
+    \color{blue!60!black}\small\itshape
+}{%
+    \par\medskip
+}
+
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -65,18 +73,18 @@
     inputencoding=utf8,
     extendedchars=true,
     literate=%
-        {á}{{\'a}}1 {à}{{\`a}}1 {â}{{\^a}}1 {ã}{{\~a}}1 {ä}{{\"a}}1
-        {é}{{\'e}}1 {è}{{\`e}}1 {ê}{{\^e}}1 {ë}{{\"e}}1
-        {í}{{\'i}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
-        {ó}{{\'o}}1 {ò}{{\`o}}1 {ô}{{\^o}}1 {õ}{{\~o}}1 {ö}{{\"o}}1
-        {ú}{{\'u}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
-        {ç}{{\c{c}}}1
-        {Á}{{\'A}}1 {À}{{\`A}}1 {Â}{{\^A}}1 {Ã}{{\~A}}1 {Ä}{{\"A}}1
-        {É}{{\'E}}1 {È}{{\`E}}1 {Ê}{{\^E}}1 {Ë}{{\"E}}1
-        {Í}{{\'I}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
-        {Ó}{{\'O}}1 {Ò}{{\`O}}1 {Ô}{{\^O}}1 {Õ}{{\~O}}1 {Ö}{{\"O}}1
-        {Ú}{{\'U}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
-        {Ç}{{\c{C}}}1
+        {á}{{á}}1 {à}{{à}}1 {â}{{â}}1 {ã}{{ã}}1 {ä}{{\"a}}1
+        {é}{{é}}1 {è}{{\`e}}1 {ê}{{ê}}1 {ë}{{\"e}}1
+        {í}{{í}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
+        {ó}{{ó}}1 {ò}{{\`o}}1 {ô}{{ô}}1 {õ}{{õ}}1 {ö}{{\"o}}1
+        {ú}{{ú}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
+        {ç}{{ç}}1
+        {Á}{{Á}}1 {À}{{À}}1 {Â}{{Â}}1 {Ã}{{Ã}}1 {Ä}{{\"A}}1
+        {É}{{É}}1 {È}{{\`E}}1 {Ê}{{Ê}}1 {Ë}{{\"E}}1
+        {Í}{{Í}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
+        {Ó}{{Ó}}1 {Ò}{{\`O}}1 {Ô}{{Ô}}1 {Õ}{{Õ}}1 {Ö}{{\"O}}1
+        {Ú}{{Ú}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
+        {Ç}{{Ç}}1
 }
 
 \graphicspath{{figuras/}}
@@ -153,6 +161,17 @@
 
 \section{Introdução}
 
+\begin{dica}
+\noindent\textbf{Dica ao autor \textemdash\ Introdução de Relatório Técnico:}
+
+O relatório técnico é focado no mundo corporativo e prático. Diferente do artigo, seu público-alvo pode incluir gestores (não-técnicos) e analistas (técnicos).
+\begin{itemize}
+    \item \textbf{Vá direto ao ponto:} Apresente o \textbf{problema de negócio} na primeira frase.
+    \item \textbf{Métricas de negócio:} Vincule o problema a métricas de negócio (ex: perda de R\$ por churn, aumento de custos).
+    \item \textbf{Resumo Executivo:} Em relatórios reais, a Introdução ou Resumo Executivo é a única parte lida por gestores C-Level. Garanta que o objetivo e o método escolhido estejam perfeitamente claros.
+\end{itemize}
+\end{dica}
+
 A retenção de clientes é um dos principais desafios enfrentados por empresas de telecomunicações no cenário competitivo atual. O fenômeno do \textit{churn}, ou evasão de clientes, representa uma perda significativa de receita, sendo que o custo de aquisição de novos clientes pode ser até sete vezes maior do que o custo de retenção \cite{provost2013}. Neste contexto, a Ciência de Dados oferece ferramentas para a identificação precoce de clientes com alto risco de \textit{churn}.
 
 Este relatório técnico documenta a aplicação de um pipeline de Ciência de Dados para a previsão de \textit{churn}, descrevendo desde a coleta e análise exploratória dos dados até o treinamento e avaliação de modelos preditivos.
@@ -161,6 +180,17 @@ Este relatório técnico documenta a aplicação de um pipeline de Ciência de D
 % 2. FUNDAMENTAÇÃO TEÓRICA
 % ============================================================
 \section{Fundamentação Teórica}
+
+\begin{dica}
+\noindent\textbf{Dica ao autor \textemdash\ Fundamentação em Relatórios:}
+
+Relatórios técnicos não exigem uma profunda revisão de literatura acadêmica. A ``fundamentação'' aqui serve para \textbf{justificar suas escolhas técnicas}.
+\begin{itemize}
+    \item Por que Regressão Logística? (Porque oferece explicabilidade para a equipe de CRM).
+    \item Por que LightGBM? (Porque lida bem com dados tabulares e treino rápido).
+    \item Seja breve e referencie a documentação das ferramentas ou livros de referência prática \cite{geron2022}.
+\end{itemize}
+\end{dica}
 
 \subsection{Modelos de Classificação Supervisionada}
 
@@ -192,6 +222,18 @@ Para problemas de classificação binária com desbalanceamento de classes, a ac
 % ============================================================
 \section{Metodologia}
 
+\begin{dica}
+\noindent\textbf{Dica ao autor \textemdash\ Metodologia em Relatórios:}
+
+Aqui você narra a sua \textit{pipeline} de execução técnica de forma clara e estruturada. O foco é a \textbf{reprodutibilidade e eficiência}.
+\begin{itemize}
+    \item \textbf{Dados:} De onde vieram (Banco de dados, API, CSV)? Qual o período? Quantas variáveis?
+    \item \textbf{Limpeza:} Quais foram os grandes obstáculos na qualidade dos dados?
+    \item \textbf{Validação:} Como você garantiu que o modelo não sofreu \textit{overfitting}? (Mencione K-Fold, divisão temporal de séries).
+\end{itemize}
+Inclua o diagrama do \textit{pipeline} (Figura \ref{fig:pipeline}) sempre que possível.
+\end{dica}
+
 A metodologia segue o pipeline padrão de Ciência de Dados, ilustrado na Figura~\ref{fig:pipeline}. O repositório do projeto\footnote{Disponível em: \url{https://github.com/seu-usuario/projeto-tcc}} contém todos os scripts e dados necessários para reprodução.
 
 \begin{figure}[htbp]
@@ -221,6 +263,17 @@ Foram treinados três modelos: Regressão Logística ($C = 1.0$), \textit{Random
 % ============================================================
 \section{Resultados}
 
+\begin{dica}
+\noindent\textbf{Dica ao autor \textemdash\ Resultados de Relatório Técnico:}
+
+No mundo corporativo, os resultados devem responder: \textbf{``O que ganho com isso?''}
+\begin{itemize}
+    \item Começe com o \textit{bottom-line}: O modelo obteve X\% de acurácia, superando a meta.
+    \item \textbf{Traduzindo as métricas:} Não mostre apenas a AUC-ROC. Mostre a matriz de confusão e traduza os Falsos Positivos e Falsos Negativos para \textbf{reais (R\$)}. Qual o impacto financeiro de classificar mal um cliente?
+    \item \textbf{Explicabilidade:} Use a Tabela \ref{tab:coeficientes} (Coeficientes) ou Shapley values para mostrar \textbf{quais variáveis mais importam}. A equipe de negócio quer saber \textit{por que} os clientes saem, não apenas prever que eles sairão.
+\end{itemize}
+\end{dica}
+
 A análise exploratória revelou que aproximadamente 20\% dos clientes são classificados como \textit{churn}. A Tabela~\ref{tab:estatisticas} apresenta as estatísticas descritivas das variáveis numéricas.
 
 \input{tabelas/tab_estatisticas_descritivas}
@@ -249,6 +302,17 @@ A Tabela~\ref{tab:coeficientes} apresenta os coeficientes estimados pela Regress
 % 5. CONCLUSÃO
 % ============================================================
 \section{Conclusão}
+
+\begin{dica}
+\noindent\textbf{Dica ao autor \textemdash\ Conclusão de Relatório:}
+
+A conclusão deve ser orientada à ação (\textit{actionable insights}).
+\begin{enumerate}
+    \item \textbf{Veredito Técnico:} O modelo Y está apto para colocar em produção (\textit{deploy})?
+    \item \textbf{Recomendação de Negócio:} Com base nos achados (ex: tempo de conta influencia churn), o que a equipe de Marketing/CRM deve fazer?
+    \item \textbf{Próximos Passos:} O que é necessário para escalar ou manter este modelo monitorado?
+\end{enumerate}
+\end{dica}
 
 Este relatório técnico apresentou a aplicação de técnicas de \textit{Machine Learning} para previsão de \textit{churn} de clientes em telecomunicações. O modelo \textit{LightGBM} apresentou o melhor desempenho (AUC-ROC = 0,877), confirmando sua eficácia para problemas de classificação binária com dados tabulares.
 

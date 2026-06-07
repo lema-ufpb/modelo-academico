@@ -80,18 +80,18 @@
     inputencoding=utf8,
     extendedchars=true,
     literate=%
-        {á}{{\'a}}1 {à}{{\`a}}1 {â}{{\^a}}1 {ã}{{\~a}}1 {ä}{{\"a}}1
-        {é}{{\'e}}1 {è}{{\`e}}1 {ê}{{\^e}}1 {ë}{{\"e}}1
-        {í}{{\'i}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
-        {ó}{{\'o}}1 {ò}{{\`o}}1 {ô}{{\^o}}1 {õ}{{\~o}}1 {ö}{{\"o}}1
-        {ú}{{\'u}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
-        {ç}{{\c{c}}}1
-        {Á}{{\'A}}1 {À}{{\`A}}1 {Â}{{\^A}}1 {Ã}{{\~A}}1 {Ä}{{\"A}}1
-        {É}{{\'E}}1 {È}{{\`E}}1 {Ê}{{\^E}}1 {Ë}{{\"E}}1
-        {Í}{{\'I}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
-        {Ó}{{\'O}}1 {Ò}{{\`O}}1 {Ô}{{\^O}}1 {Õ}{{\~O}}1 {Ö}{{\"O}}1
-        {Ú}{{\'U}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
-        {Ç}{{\c{C}}}1
+        {á}{{á}}1 {à}{{à}}1 {â}{{â}}1 {ã}{{ã}}1 {ä}{{\"a}}1
+        {é}{{é}}1 {è}{{\`e}}1 {ê}{{ê}}1 {ë}{{\"e}}1
+        {í}{{í}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
+        {ó}{{ó}}1 {ò}{{\`o}}1 {ô}{{ô}}1 {õ}{{õ}}1 {ö}{{\"o}}1
+        {ú}{{ú}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
+        {ç}{{ç}}1
+        {Á}{{Á}}1 {À}{{À}}1 {Â}{{Â}}1 {Ã}{{Ã}}1 {Ä}{{\"A}}1
+        {É}{{É}}1 {È}{{\`E}}1 {Ê}{{Ê}}1 {Ë}{{\"E}}1
+        {Í}{{Í}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
+        {Ó}{{Ó}}1 {Ò}{{\`O}}1 {Ô}{{Ô}}1 {Õ}{{Õ}}1 {Ö}{{\"O}}1
+        {Ú}{{Ú}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
+        {Ç}{{Ç}}1
 }
 
 \graphicspath{{figuras/}}
@@ -147,7 +147,16 @@
 \chapter{Introdução à Ciência de Dados}
 
 \begin{dica}
-\noindent\textbf{Dica ao professor:} Este capítulo introdutório pode ser trabalhado em 2 a 3 encontros. Incentive os alunos a refletir sobre exemplos do dia a dia que envolvem dados: redes sociais, \textit{e-commerce}, saúde, transporte. O objetivo é despertar a curiosidade antes de mergulhar nos aspectos técnicos.
+\noindent\textbf{Dica ao professor \textemdash\ Introdução (Livro Didático):}
+
+Um livro didático exige uma abordagem diferenciada. O objetivo aqui não é convencer uma banca, mas \textbf{engajar um aluno}.
+\begin{itemize}
+    \item Começe com exemplos do cotidiano (ex: como a Netflix usa dados, predições em esportes, detecção de fraude no cartão de crédito).
+    \item Defina os termos-chave logo de cara e de forma simples.
+    \item Apresente a ementa do livro: ``Neste capítulo você aprenderá A; no próximo, B.''
+    \item Use metáforas sempre que possível (ex: modelo preditivo como uma receita de bolo).
+\end{itemize}
+Sugere-se dividir este capítulo introdutório em 2 a 3 encontros de aula.
 \end{dica}
 
 A \index{Ciência de Dados}Ciência de Dados é uma disciplina interdisciplinar que combina estatística, computação e conhecimento de domínio para extrair conhecimento de dados~\cite{provost2013}. Diferentemente da estatística clássica, a Ciência de Dados lida com volumes massivos de informação, frequentemente não estruturada, e emprega métodos computacionais escaláveis.
@@ -208,7 +217,14 @@ Um projeto típico de Ciência de Dados segue as etapas descritas na Tabela~\ref
 % ============================================================
 
 \begin{dica}
-\noindent\textbf{Dica ao professor:} Se a turma já tem familiaridade com Python, este capítulo pode ser usado como revisão. Caso contrário, dedique de 2 a 3 aulas para os conceitos básicos antes de avançar para manipulação de dados com pandas.
+\noindent\textbf{Dica ao professor \textemdash\ O Desafio do Pré-requisito:}
+
+A maior barreira no ensino de Ciência de Dados não são os algoritmos, são as \textbf{ferramentas de manipulação de dados}.
+\begin{itemize}
+    \item Se a turma já domina Python e \texttt{pandas}, este capítulo serve como revisão de fluxo de trabalho.
+    \item Se for uma turma iniciante, não pule para o Scikit-Learn sem antes garantir que eles sabem filtrar um DataFrame, lidar com valores ausentes e fazer \textit{groupby}.
+    \item Mostre o impacto de dados sujos antes de ensinar como limpá-los. Deixe o modelo falhar primeiro!
+\end{itemize}
 \end{dica}
 
 \index{Python}Python~\cite{mckinney2022} tornou-se a linguagem dominante em Ciência de Dados devido à sua sintaxe simples, ecossistema rico de bibliotecas e comunidade ativa. Este capítulo apresenta os fundamentos necessários para acompanhar o restante do livro.
@@ -227,7 +243,14 @@ A Equação~\ref{eq:media} define a média aritmética, uma das medidas mais uti
 \end{equation}
 
 \begin{dica}
-\noindent\textbf{Dica ao aluno:} A média é sensível a valores extremos (\textit{outliers}). Quando os dados apresentam assimetria, prefira a mediana como medida de tendência central. Use \texttt{df.describe()} no pandas para obter ambas simultaneamente.
+\noindent\textbf{Dica ao aluno \textemdash\ A armadilha da média:}
+
+Um erro muito comum em Ciência de Dados é achar que a \textbf{média} conta a história toda. A média é muito sensível a valores extremos (\textit{outliers}).
+\begin{itemize}
+    \item Imagine que em uma sala de aula de 10 pessoas, a renda média seja R\$ 2.000. Se Elon Musk entrar na sala, a renda média subirá para R\$ 1 bilhão. Isso representa os alunos? Não.
+    \item Nestes casos (distribuições assimétricas), a \textbf{mediana} é muito mais confiável.
+    \item Use \texttt{df.describe()} no \textit{pandas} para obter ambas simultaneamente.
+\end{itemize}
 \end{dica}
 
 \begin{exercicio}
@@ -250,7 +273,14 @@ O ecossistema Python para dados é composto por:
 % ============================================================
 
 \begin{dica}
-\noindent\textbf{Dica ao professor:} A Análise Exploratória de Dados (EDA) é talvez a etapa mais criativa do pipeline. Incentive os alunos a formular hipóteses antes de gerar gráficos. Lembre-os do princípio de \citeonline{tukey1977}: ``Explorar é procurar sem saber exatamente o que se procura.''
+\noindent\textbf{Dica ao professor \textemdash\ Análise Exploratória de Dados (EDA):}
+
+A EDA é a etapa mais criativa do pipeline e, paradoxalmente, a mais difícil de ensinar porque \textbf{não tem receita pronta}.
+\begin{itemize}
+    \item Em vez de pedir ``faça 5 gráficos'', peça aos alunos: ``formulem 3 perguntas sobre este dataset e tentem respondê-las usando gráficos''.
+    \item Lembre-os do princípio de Tukey (1977): \textit{''Explorar é procurar sem saber exatamente o que se procura.''}
+    \item Demonstre que gráficos simples (barras, dispersão) frequentemente revelam mais que visualizações complexas em 3D.
+\end{itemize}
 \end{dica}
 
 A \index{Análise Exploratória}Análise Exploratória de Dados (EDA)~\cite{tukey1977} é o processo de investigar dados por meio de resumos estatísticos e representações gráficas. O objetivo é compreender a estrutura dos dados antes de aplicar modelos.
@@ -295,7 +325,14 @@ Utilizando um dataset de sua escolha, calcule a matriz de correlação e identif
 % ============================================================
 
 \begin{dica}
-\noindent\textbf{Dica ao aluno:} O pré-processamento consome cerca de 80\% do tempo em projetos de dados reais. Não pule esta etapa. Dados bem preparados são condição necessária --- embora não suficiente --- para modelos de qualidade~\cite{box1978}.
+\noindent\textbf{Dica ao aluno \textemdash\ \textit{Garbage In, Garbage Out}:}
+
+A dura realidade: o pré-processamento de dados vai consumir cerca de \textbf{80\% do seu tempo} em projetos reais.
+\begin{itemize}
+    \item Não existe modelo mágico que salve dados ruins. Se você colocar lixo na entrada, sairá lixo na predição (\textit{Garbage In, Garbage Out}).
+    \item Dados ausentes têm significado? Muitas vezes um campo vazio (ex: não preencheu a renda) é uma informação mais útil para prever fraude do que a própria renda.
+    \item Trate o pré-processamento como a fundação de um prédio. Se pular esta etapa, seu modelo vai desmoronar quando encontrar dados do mundo real.
+\end{itemize}
 \end{dica}
 
 O \index{pré-processamento}pré-processamento transforma dados brutos em um formato adequado para modelagem. As principais etapas incluem tratamento de valores ausentes, \index{encoding}codificação de variáveis categóricas e normalização.
@@ -339,7 +376,14 @@ A normalização escala as variáveis para uma faixa comparável. Dois métodos 
 % ============================================================
 
 \begin{dica}
-\noindent\textbf{Dica ao professor:} Este capítulo pode ser dividido em duas partes: (1) fundamentos teóricos com ênfase nos conceitos de treino/teste, viés-variância e validação cruzada; (2) prática com \texttt{scikit-learn}. Recomenda-se um laboratório por algoritmo.
+\noindent\textbf{Dica ao professor \textemdash\ Ensinando Modelagem:}
+
+Para capítulos sobre modelos, a abordagem didática ideal divide-se em duas partes:
+\begin{enumerate}
+    \item \textbf{A lógica sem a matemática:} Explique como a Árvore de Decisão funciona usando um exemplo (ex: Akinator). Mostre o conceito de viés vs. variância visualmente (alvo e tiros).
+    \item \textbf{A prática (código):} Demonstre o uso do Scikit-Learn. A API \texttt{fit()} e \texttt{predict()} é genialmente simples, o que permite focar nos resultados.
+\end{enumerate}
+O maior erro conceitual de alunos é vazar dados de teste para o treino (\textit{Data Leakage}). Reforce que os dados de teste são ``intocáveis'' até o último minuto.
 \end{dica}
 
 O \index{Aprendizado Supervisionado}Aprendizado Supervisionado~\cite{hastie2009} é o ramo do \index{Machine Learning}\textit{Machine Learning} que aprende a mapear entradas a saídas a partir de exemplos rotulados.
@@ -394,7 +438,14 @@ Treine um modelo \textit{Random Forest} no dataset \texttt{titanic} do Seaborn. 
 % ============================================================
 
 \begin{dica}
-\noindent\textbf{Dica ao aluno:} Um bom gráfico comunica em segundos o que uma tabela levaria páginas para explicar. Entretanto, gráficos enganosos podem distorcer a realidade. Sempre inclua: título claro, eixos rotulados, fonte dos dados e escala adequada~\cite{tukey1977}.
+\noindent\textbf{Dica ao aluno \textemdash\ A arte e a \textit{ciência} da avaliação:}
+
+Avaliar um modelo é muito mais do que olhar para a Acurácia.
+\begin{itemize}
+    \item \textbf{O paradoxo da acurácia:} Se num banco só 1\% das transações for fraude, um modelo inútil que sempre diz ``NÃO É FRAUDE'' terá 99\% de acurácia.
+    \item Para dados desbalanceados, você precisa entender a Matriz de Confusão, Precisão, Recall e a Curva ROC.
+    \item \textbf{Um gráfico bem feito:} Um bom gráfico (como a Figura~\ref{fig:roc}) comunica em segundos o que uma tabela levaria páginas para explicar. Contudo, exija de si mesmo o básico: título, eixos nomeados, legenda e escala correta.
+\end{itemize}
 \end{dica}
 
 A \index{Visualização}visualização de dados é uma ferramenta essencial para comunicação de resultados. A Tabela~\ref{tab:matriz} apresenta a matriz de confusão do modelo \textit{LightGBM}.
@@ -424,7 +475,14 @@ Crie um gráfico de dispersão (\texttt{scatterplot}) relacionando duas variáve
 \chapter{Respostas dos Exercícios Selecionados}
 
 \begin{dica}
-\noindent\textbf{Dica ao professor:} As respostas completas podem ser disponibilizadas em um repositório separado para evitar consulta prévia pelos alunos. Neste apêndice, incluímos apenas as respostas dos exercícios ímpares.
+\noindent\textbf{Dica ao professor \textemdash\ Apêndices e Gabaritos:}
+
+Em materiais didáticos:
+\begin{itemize}
+    \item Forneça apenas respostas resumidas ou gabaritos parciais no apêndice (ex: apenas as questões ímpares).
+    \item As soluções completas (o código Python passo a passo) devem estar em um repositório Git privado, acessível apenas aos instrutores, ou em um manual do professor.
+    \item Crie desafios que não têm "resposta exata" (ex: "Qual modelo é melhor se o custo de falso positivo for R\$ 10 e o de falso negativo R\$ 100?"), o que fomenta a discussão em sala.
+\end{itemize}
 \end{dica}
 
 \noindent\textbf{Exercício 1 (Capítulo 1):} Exemplos de dados não estruturados: (a) postagens em redes sociais --- convertidas para tabela via análise de sentimento; (b) avaliações de produtos --- convertidas para notas numéricas; (c) gravações de chamadas --- convertidas para texto via ASR e depois para métricas de satisfação.

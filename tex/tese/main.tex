@@ -75,18 +75,18 @@
     inputencoding=utf8,
     extendedchars=true,
     literate=%
-        {á}{{\'a}}1 {à}{{\`a}}1 {â}{{\^a}}1 {ã}{{\~a}}1 {ä}{{\"a}}1
-        {é}{{\'e}}1 {è}{{\`e}}1 {ê}{{\^e}}1 {ë}{{\"e}}1
-        {í}{{\'i}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
-        {ó}{{\'o}}1 {ò}{{\`o}}1 {ô}{{\^o}}1 {õ}{{\~o}}1 {ö}{{\"o}}1
-        {ú}{{\'u}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
-        {ç}{{\c{c}}}1
-        {Á}{{\'A}}1 {À}{{\`A}}1 {Â}{{\^A}}1 {Ã}{{\~A}}1 {Ä}{{\"A}}1
-        {É}{{\'E}}1 {È}{{\`E}}1 {Ê}{{\^E}}1 {Ë}{{\"E}}1
-        {Í}{{\'I}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
-        {Ó}{{\'O}}1 {Ò}{{\`O}}1 {Ô}{{\^O}}1 {Õ}{{\~O}}1 {Ö}{{\"O}}1
-        {Ú}{{\'U}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
-        {Ç}{{\c{C}}}1
+        {á}{{á}}1 {à}{{à}}1 {â}{{â}}1 {ã}{{ã}}1 {ä}{{\"a}}1
+        {é}{{é}}1 {è}{{\`e}}1 {ê}{{ê}}1 {ë}{{\"e}}1
+        {í}{{í}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
+        {ó}{{ó}}1 {ò}{{\`o}}1 {ô}{{ô}}1 {õ}{{õ}}1 {ö}{{\"o}}1
+        {ú}{{ú}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
+        {ç}{{ç}}1
+        {Á}{{Á}}1 {À}{{À}}1 {Â}{{Â}}1 {Ã}{{Ã}}1 {Ä}{{\"A}}1
+        {É}{{É}}1 {È}{{\`E}}1 {Ê}{{Ê}}1 {Ë}{{\"E}}1
+        {Í}{{Í}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
+        {Ó}{{Ó}}1 {Ò}{{\`O}}1 {Ô}{{Ô}}1 {Õ}{{Õ}}1 {Ö}{{\"O}}1
+        {Ú}{{Ú}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
+        {Ç}{{Ç}}1
 }
 
 \graphicspath{{figuras/}}
@@ -159,7 +159,19 @@
 \chapter{Introdução}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} A introdução de uma tese deve ser abrangente e profunda. Espera-se que o doutorando demonstre visão crítica do estado da arte e capacidade de identificar lacunas significativas. Deve conter: contextualização ampla, problema de pesquisa delimitado, hipóteses, objetivos, justificativa, contribuições esperadas e estrutura da tese.
+\noindent\textbf{Dica ao autor \textemdash\ Introdução de Tese:}
+
+A introdução de uma tese (doutorado) deve ser \textbf{abrangente, profunda e propositiva}. Espera-se que o doutorando demonstre uma visão madura do estado da arte e capacidade de identificar \textbf{lacunas inéditas}. Deve conter:
+\begin{enumerate}
+    \item \textbf{Contextualização Ampla:} Evolução histórica e estado atual do tema.
+    \item \textbf{Problema de Pesquisa:} Delimitado claramente. Por que os métodos atuais falham?
+    \item \textbf{Hipóteses:} Suposições testáveis que guiam a pesquisa.
+    \item \textbf{Objetivos (Geral e Específicos):} O que você vai fazer para provar/refutar as hipóteses?
+    \item \textbf{Tese Defendida:} Uma afirmação clara da sua contribuição \textbf{inédita} para a ciência (``A tese defendida neste trabalho é que...'').
+    \item \textbf{Justificativa e Relevância.}
+    \item \textbf{Estrutura do Documento.}
+\end{enumerate}
+Tamanho recomendado: 5 a 10 páginas.
 \end{dica}
 
 O \index{setor de telecomunicações}setor de telecomunicações brasileiro movimenta mais de R\$ 250 bilhões anuais e enfrenta taxas de \textit{churn}\index{churn} que podem ultrapassar 3\% ao mês~\cite{souza2023}. A \index{Inteligência Artificial}Inteligência Artificial~\cite{russell2022} tem transformado a predição de comportamento do consumidor. No entanto, regulamentações como a LGPD~\cite{castro2023} exigem que os modelos sejam não apenas precisos, mas também explicáveis. Este duplo desafio constitui o cerne da presente tese.
@@ -174,7 +186,14 @@ O \index{setor de telecomunicações}setor de telecomunicações brasileiro movi
 onde $\phi_i$ é a contribuição da \textit{feature} $i$ para a predição.
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} Equações complexas como~\ref{eq:shap} são esperadas em teses. Forneça também explicação intuitiva. A equação demonstra rigor; a explicação demonstra didática. Ambos são valorizados pela banca.
+\noindent\textbf{Dica ao autor \textemdash\ Equações em Teses:}
+
+Equações matemáticas e estatísticas complexas como a Equação~\ref{eq:shap} são esperadas em trabalhos de doutorado, mas você \textbf{nunca} deve jogá-las no texto sem explicação.
+\begin{itemize}
+    \item Defina \textbf{todas} as variáveis imediatamente após a equação.
+    \item Forneça uma \textbf{explicação intuitiva}: o que essa fórmula significa no mundo real?
+\end{itemize}
+A equação demonstra rigor analítico; a tradução dela demonstra didática. Bancas de doutorado valorizam profundamente pesquisadores que sabem comunicar conceitos complexos de forma simples.
 \end{dica}
 
 \section{Problema e Hipóteses}
@@ -210,7 +229,15 @@ Esta tese está organizada em oito capítulos: Introdução, Fundamentação Te�
 \chapter{Fundamentação Teórica}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} Em teses, a fundamentação deve ser exaustiva e crítica. Analise, compare, contraponha e identifique lacunas. Pode ocupar 30 a 50 páginas. Organize em seções que refletem os pilares conceituais da pesquisa.
+\noindent\textbf{Dica ao autor \textemdash\ Revisão de Literatura (Estado da Arte):}
+
+Em teses, a fundamentação teórica (ou Revisão Sistemática da Literatura) deve ser \textbf{exaustiva e crítica}.
+\begin{itemize}
+    \item Você não está apenas relatando o que os outros fizeram; você está construindo o palco onde sua tese vai brilhar.
+    \item Analise, compare, contraponha abordagens e \textbf{aponte explicitamente onde estão as lacunas} metodológicas, teóricas ou empíricas que sua pesquisa preencherá.
+    \item Pode ocupar de 30 a 50 páginas. Organize em subseções que refletem os pilares conceituais da pesquisa.
+    \item O uso de quadros-resumo comparativos (Autor, Método, Resultados, Lacunas) é altamente recomendado.
+\end{itemize}
 \end{dica}
 
 \section{Aprendizado Supervisionado}
@@ -254,7 +281,17 @@ Estudos de \citeonline{carvalho2024} e \citeonline{castro2023} investigaram aspe
 \chapter{Metodologia}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} A metodologia de uma tese deve ser robusta (15 a 25 páginas). Inclua: filosofia da pesquisa, abordagem, delineamento, população, instrumentos, coleta, análise, validação e aspectos éticos. A reprodutibilidade~\cite{moresi2023} depende da qualidade da descrição.
+\noindent\textbf{Dica ao autor \textemdash\ Metodologia de Tese:}
+
+A metodologia de uma tese deve ser um tratado de \textbf{rigor científico} (15 a 30 páginas). Inclua:
+\begin{itemize}
+    \item \textbf{Filosofia e Abordagem:} Justifique o paradigma epistemológico.
+    \item \textbf{Delineamento:} Desenho experimental, quase-experimental, longitudinal, etc.
+    \item \textbf{Coleta de Dados:} Fontes, protocolos, viéses inerentes e como foram mitigados.
+    \item \textbf{Pipeline Analítico:} Pré-processamento, algoritmos (hiperparâmetros, topologias de redes, etc.).
+    \item \textbf{Validação Robusta:} Validação cruzada \textit{nested}, testes de hipótese estatísticos (ANOVA, Wilcoxon, t-test) para garantir que a superioridade do seu método não é obra do acaso.
+\end{itemize}
+A \textbf{reprodutibilidade} \cite{moresi2023} é avaliada aqui. Disponibilizar o repositório Git com dados (ou metadados) e código é essencial.
 \end{dica}
 
 A pesquisa é aplicada, quantitativa e explicativa. O \textit{framework} segue a Figura~\ref{fig:pipeline}.
@@ -283,7 +320,15 @@ AUC-ROC, Precisão, \textit{Recall}\index{Recall}, F1-Score, \textit{Log Loss}. 
 \chapter{Resultados --- Estudo 1: Predição}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} Cada estudo pode constituir um capítulo. Apresente: análise exploratória, comparação de modelos, impacto de técnicas, síntese.
+\noindent\textbf{Dica ao autor \textemdash\ Estruturação dos Resultados em Teses:}
+
+Uma tese costuma ter vários estudos interconectados. É comum dedicar \textbf{um capítulo de Resultados para cada objetivo específico} ou experimento principal. Por exemplo:
+\begin{itemize}
+    \item Capítulo 4: Análise exploratória profunda e seleção de \textit{features}.
+    \item Capítulo 5: Desempenho comparativo dos modelos preditivos (o ''coração'' da tese).
+    \item Capítulo 6: Interpretabilidade (ex: análise SHAP, explicabilidade do modelo).
+\end{itemize}
+Garanta que haja um fio condutor lógico conectando esses capítulos. Ao final de cada um, escreva uma breve conclusão parcial que prepare o leitor para o próximo capítulo.
 \end{dica}
 
 \section{Análise Exploratória}
@@ -351,7 +396,16 @@ Clientes com satisfação $< 3$ têm probabilidade de \textit{churn} superior a 
 \chapter{Discussão Geral}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} A discussão geral integra os achados. Mostre a ``floresta'' após detalhar cada ``árvore''. Retome as hipóteses.
+\noindent\textbf{Dica ao autor \textemdash\ Discussão Geral de Tese:}
+
+Após os múltiplos capítulos de resultados, uma tese de excelência possui um capítulo de \textbf{Discussão Geral}.
+\begin{itemize}
+    \item Aqui você mostra a ``floresta'', não as ``árvores''.
+    \item Integre todos os achados para responder à Pergunta de Pesquisa Maior.
+    \item As hipóteses levantadas no Capítulo 1 foram comprovadas?
+    \item Qual é a \textbf{trama teórica} que une todos esses resultados?
+\end{itemize}
+É nesta seção que você \textbf{defende a sua Tese} (a contribuição inédita) perante o campo do conhecimento.
 \end{dica}
 
 O Estudo 1 confirma superioridade do \textit{Gradient Boosting}~\cite{hastie2009}. O Estudo 2 mostra que explicabilidade gera \textit{insights} acionáveis: variáveis comportamentais dominam, sugerindo foco em experiência do cliente. As três hipóteses foram confirmadas.
@@ -394,7 +448,16 @@ Esta tese propôs \textit{framework} integrado de predição e explicabilidade. 
 \chapter{Organização dos Experimentos}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} Em teses, os apêndices devem conter material suplementar que detalhe a execução dos experimentos. Prefira tabelas e figuras que sintetizem a informação ao código-fonte bruto, mantendo o foco na comunicação dos resultados.
+\noindent\textbf{Dica ao autor \textemdash\ Apêndices e Anexos em Teses:}
+
+Devido ao grande volume de experimentos em um doutorado, use apêndices para material complementar que interromperia o fluxo da leitura no texto principal:
+\begin{itemize}
+    \item Demonstrações matemáticas longas.
+    \item Matrizes de correlação completas com dezenas de variáveis.
+    \item Tabelas com resultados brutos ou múltiplos testes de sensibilidade.
+    \item Guias de uso detalhados dos algoritmos ou \textit{pipelines} criados.
+\end{itemize}
+Evite colar código-fonte puro (milhares de linhas); isso deve ir para o repositório Git, cujo \textit{link} é citado na Metodologia.
 \end{dica}
 
 A Tabela~\ref{tab:pipeline_tese} descreve os scripts que compõem a pipeline de experimentação.

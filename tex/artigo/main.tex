@@ -83,18 +83,18 @@
     inputencoding=utf8,
     extendedchars=true,
     literate=%
-        {á}{{\'a}}1 {à}{{\`a}}1 {â}{{\^a}}1 {ã}{{\~a}}1 {ä}{{\"a}}1
-        {é}{{\'e}}1 {è}{{\`e}}1 {ê}{{\^e}}1 {ë}{{\"e}}1
-        {í}{{\'i}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
-        {ó}{{\'o}}1 {ò}{{\`o}}1 {ô}{{\^o}}1 {õ}{{\~o}}1 {ö}{{\"o}}1
-        {ú}{{\'u}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
-        {ç}{{\c{c}}}1
-        {Á}{{\'A}}1 {À}{{\`A}}1 {Â}{{\^A}}1 {Ã}{{\~A}}1 {Ä}{{\"A}}1
-        {É}{{\'E}}1 {È}{{\`E}}1 {Ê}{{\^E}}1 {Ë}{{\"E}}1
-        {Í}{{\'I}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
-        {Ó}{{\'O}}1 {Ò}{{\`O}}1 {Ô}{{\^O}}1 {Õ}{{\~O}}1 {Ö}{{\"O}}1
-        {Ú}{{\'U}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
-        {Ç}{{\c{C}}}1
+        {á}{{á}}1 {à}{{à}}1 {â}{{â}}1 {ã}{{ã}}1 {ä}{{\"a}}1
+        {é}{{é}}1 {è}{{\`e}}1 {ê}{{ê}}1 {ë}{{\"e}}1
+        {í}{{í}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
+        {ó}{{ó}}1 {ò}{{\`o}}1 {ô}{{ô}}1 {õ}{{õ}}1 {ö}{{\"o}}1
+        {ú}{{ú}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
+        {ç}{{ç}}1
+        {Á}{{Á}}1 {À}{{À}}1 {Â}{{Â}}1 {Ã}{{Ã}}1 {Ä}{{\"A}}1
+        {É}{{É}}1 {È}{{\`E}}1 {Ê}{{Ê}}1 {Ë}{{\"E}}1
+        {Í}{{Í}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
+        {Ó}{{Ó}}1 {Ò}{{\`O}}1 {Ô}{{Ô}}1 {Õ}{{Õ}}1 {Ö}{{\"O}}1
+        {Ú}{{Ú}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
+        {Ç}{{Ç}}1
 }
 
 \graphicspath{{figuras/}}
@@ -146,7 +146,17 @@
 \section{Introdução}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} Em artigos científicos, a introdução precisa ser ainda mais enxuta que em TCCs. O leitor de periódicos decide em segundos se continuará lendo. Comece com o contexto amplo, identifique a lacuna de pesquisa, apresente o objetivo e termine com a contribuição do trabalho. Último parágrafo: descreva brevemente a estrutura do artigo.
+\noindent\textbf{Dica ao autor \textemdash\ Introdução de Artigo Científico:}
+
+Em artigos científicos, a introdução precisa ser \textbf{extremamente enxuta e direta}. O leitor de periódicos decide em segundos se continuará lendo. Siga esta estrutura (1 a 2 páginas máximo):
+\begin{enumerate}
+    \item \textbf{Contexto:} Começe direto no tema principal (sem história longa).
+    \item \textbf{Lacuna (\textit{Gap}):} O que a literatura \textbf{não} resolveu ainda?
+    \item \textbf{Objetivo:} ``Para preencher essa lacuna, este artigo objetiva...''
+    \item \textbf{Contribuição:} Qual a novidade deste trabalho? (Método, dados, resultado?)
+    \item \textbf{Estrutura:} Um último parágrafo descrevendo as seções subsequentes.
+\end{enumerate}
+Não perca tempo definindo conceitos básicos na introdução.
 \end{dica}
 
 A previsão de \textit{churn} --- cancelamento de serviços por clientes --- é um problema central em negócios baseados em assinatura~\cite{geron2022}. Com a crescente disponibilidade de dados transacionais, a \index{Ciência de Dados}Ciência de Dados oferece métodos robustos para identificar padrões de cancelamento antes que eles ocorram.
@@ -168,7 +178,15 @@ Conforme destaca \citeonline{wazlawick2024}, a clareza na definição do problem
 \section{Fundamentação Teórica}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} A fundamentação teórica de um artigo deve ser concisa e focada. Não é necessário esgotar o tema; basta apresentar o referencial mínimo para que o leitor compreenda a metodologia e os resultados. Priorize referências atuais (últimos 5 anos) e clássicas.
+\noindent\textbf{Dica ao autor \textemdash\ Fundamentação Teórica de Artigo:}
+
+Em artigos, esta seção é focada e instrumental. Seu objetivo não é mostrar que você leu tudo, mas fornecer a base necessária para que o leitor compreenda seus métodos e resultados.
+\begin{itemize}
+    \item \textbf{Síntese:} Agrupe autores com visões semelhantes (``Diversos estudos \cite{autorA, autorB, autorC} concordam que...'').
+    \item \textbf{Atualidade:} Priorize artigos dos últimos 5 anos, além dos clássicos imprescindíveis.
+    \item \textbf{Correlatos:} Dedique uma subseção para trabalhos recentes que resolvem problemas similares. Posicione seu trabalho em relação a eles.
+\end{itemize}
+Evite longas citações diretas; prefira parafrasear e sintetizar (\texttt{\textbackslash cite\{\}}).
 \end{dica}
 
 A \index{Classificação}classificação supervisionada é um dos pilares do aprendizado de máquina~\cite{hastie2009}. Segundo \citeonline{geron2022}, a escolha do algoritmo depende de fatores como volume de dados, linearidade do problema e necessidade de interpretabilidade.
@@ -183,7 +201,16 @@ Estudos recentes~\cite{silva2024} indicam que a integração de ferramentas de I
 \section{Metodologia}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} A metodologia deve ser detalhada o suficiente para permitir a reprodução independente do experimento. Em artigos, há um equilíbrio delicado entre concisão e completude. Inclua: dados (fonte, volume, período), pré-processamento, algoritmos (com hiperparâmetros), validação e métricas.
+\noindent\textbf{Dica ao autor \textemdash\ Metodologia de Artigo:}
+
+Aqui há um equilíbrio delicado entre \textbf{concisão e completude}. O espaço é limitado, mas o experimento deve ser reprodutível.
+\begin{itemize}
+    \item \textbf{Dados:} Fonte, volume e características (Tabela \ref{tab:dicionario}).
+    \item \textbf{Procedimentos:} Descreva as etapas do \textit{pipeline} em ordem cronológica.
+    \item \textbf{Modelos:} Liste os algoritmos com seus respectivos hiperparâmetros. Não gaste espaço explicando como algoritmos clássicos (ex: Regressão Logística) funcionam, cite a referência original.
+    \item \textbf{Avaliação:} Métricas escolhidas e estratégia de validação cruzada.
+    \item \textbf{Reprodutibilidade:} Inclua o link para o repositório com o código e os dados.
+\end{itemize}
 \end{dica}
 
 A metodologia segue o pipeline ilustrado na Figura~\ref{fig:pipeline}, que abrange desde a coleta até a avaliação dos modelos.
@@ -222,7 +249,14 @@ Os dados passaram por imputação de valores ausentes, winsorização de \textit
 \section{Resultados e Discussão}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} Apresente os resultados em ordem lógica, guiando o leitor. Use tabelas para dados precisos e figuras para padrões visuais. Cada elemento visual deve ser explicitamente referenciado no texto. Discuta: os resultados confirmam ou contradizem a hipótese? Como se comparam à literatura?
+\noindent\textbf{Dica ao autor \textemdash\ Resultados e Discussão em Artigos:}
+
+Seção nuclear do artigo. Concentre-se nos achados principais.
+\begin{enumerate}
+    \item \textbf{Apresente:} Use tabelas para dados precisos (Tabela \ref{tab:comparacao}) e figuras para padrões ou comparações rápidas (Figura \ref{fig:roc}). Todo elemento visual \textbf{deve} ser chamado e explicado no texto.
+    \item \textbf{Discuta:} Vá além dos números. Por que o modelo X superou o Y? Como esses resultados se comparam com a literatura citada na seção 2?
+    \item \textbf{Limitações:} Mencione eventuais viéses nos dados ou problemas nos modelos de forma proativa. O revisor fará isso se você não fizer.
+\end{enumerate}
 \end{dica}
 
 A Tabela~\ref{tab:estatisticas} apresenta as estatísticas descritivas, e a Tabela~\ref{tab:comparacao} compara o desempenho dos modelos.
@@ -249,7 +283,15 @@ A Regressão Logística, embora menos acurada, oferece interpretabilidade~\cite{
 \section{Considerações Finais}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} Conclua retomando o objetivo, sintetize a contribuição principal, aponte limitações e sugira trabalhos futuros. Seja objetivo --- em geral 3 a 5 parágrafos são suficientes. Evite repetir resultados numéricos já apresentados.
+\noindent\textbf{Dica ao autor \textemdash\ Conclusão de Artigo:}
+
+Seja curto e grosso (3 a 5 parágrafos).
+\begin{itemize}
+    \item \textbf{Síntese:} Retome o objetivo principal e a resposta a ele. Não repita resultados numéricos exaustivos.
+    \item \textbf{Contribuição:} Destaque o valor metodológico ou prático (ex: ``O \textit{pipeline} reprodutível estabelece um novo \textit{baseline} para previsão de \textit{churn} no setor'').
+    \item \textbf{Trabalhos Futuros:} O que este artigo deixa em aberto? Indique próximos passos viáveis.
+\end{itemize}
+Não introduza novos dados ou referências nesta seção.
 \end{dica}
 
 Este artigo comparou três modelos de \textit{Machine Learning} para previsão de \textit{churn}. O \textit{LightGBM} apresentou o melhor desempenho. A principal contribuição é o pipeline reprodutível disponibilizado como template.

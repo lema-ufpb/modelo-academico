@@ -86,18 +86,18 @@
     inputencoding=utf8,
     extendedchars=true,
     literate=%
-        {á}{{\'a}}1 {à}{{\`a}}1 {â}{{\^a}}1 {ã}{{\~a}}1 {ä}{{\"a}}1
-        {é}{{\'e}}1 {è}{{\`e}}1 {ê}{{\^e}}1 {ë}{{\"e}}1
-        {í}{{\'i}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
-        {ó}{{\'o}}1 {ò}{{\`o}}1 {ô}{{\^o}}1 {õ}{{\~o}}1 {ö}{{\"o}}1
-        {ú}{{\'u}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
-        {ç}{{\c{c}}}1
-        {Á}{{\'A}}1 {À}{{\`A}}1 {Â}{{\^A}}1 {Ã}{{\~A}}1 {Ä}{{\"A}}1
-        {É}{{\'E}}1 {È}{{\`E}}1 {Ê}{{\^E}}1 {Ë}{{\"E}}1
-        {Í}{{\'I}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
-        {Ó}{{\'O}}1 {Ò}{{\`O}}1 {Ô}{{\^O}}1 {Õ}{{\~O}}1 {Ö}{{\"O}}1
-        {Ú}{{\'U}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
-        {Ç}{{\c{C}}}1
+        {á}{{á}}1 {à}{{à}}1 {â}{{â}}1 {ã}{{ã}}1 {ä}{{\"a}}1
+        {é}{{é}}1 {è}{{\`e}}1 {ê}{{ê}}1 {ë}{{\"e}}1
+        {í}{{í}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
+        {ó}{{ó}}1 {ò}{{\`o}}1 {ô}{{ô}}1 {õ}{{õ}}1 {ö}{{\"o}}1
+        {ú}{{ú}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
+        {ç}{{ç}}1
+        {Á}{{Á}}1 {À}{{À}}1 {Â}{{Â}}1 {Ã}{{Ã}}1 {Ä}{{\"A}}1
+        {É}{{É}}1 {È}{{\`E}}1 {Ê}{{Ê}}1 {Ë}{{\"E}}1
+        {Í}{{Í}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
+        {Ó}{{Ó}}1 {Ò}{{\`O}}1 {Ô}{{Ô}}1 {Õ}{{Õ}}1 {Ö}{{\"O}}1
+        {Ú}{{Ú}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
+        {Ç}{{Ç}}1
 }
 
 \graphicspath{{figuras/}}
@@ -180,7 +180,13 @@
 \chapter{Introdução}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} A introdução de uma dissertação segue a estrutura ``funil'': comece com o contexto amplo, identifique a lacuna de pesquisa, apresente a pergunta de pesquisa, os objetivos e a justificativa. Ao contrário de um artigo, você pode se estender um pouco mais (4 a 6 páginas). Use citações para ancorar cada afirmação importante. Inclua a pergunta de pesquisa de forma explícita.
+\noindent\textbf{Dica ao autor \textemdash\ Introdução de Dissertação:}
+
+A introdução de uma dissertação segue a estrutura ``funil'': contexto amplo $\to$ lacuna de pesquisa $\to$ pergunta $\to$ objetivos $\to$ justificativa. Diferente de um artigo, você pode se estender (4 a 6 páginas). Ancore cada afirmação importante em citações.
+
+\textbf{Elementos obrigatórios:} (1)~Contextualização com dados do setor; (2)~Problema de pesquisa como \textbf{pergunta explícita}; (3)~Objetivo geral e específicos com verbos de ação; (4)~Justificativa (econômica, tecnológica e social); (5)~Estrutura do texto (``o Capítulo~2 apresenta...'').
+
+\textbf{Erro fatal:} Começar com definições (``\textit{Machine Learning} é...'') em vez de contextualizar o problema. Use dados concretos para despertar o interesse: ``O setor X movimenta Y bilhões...''.
 \end{dica}
 
 O setor de telecomunicações brasileiro é um dos mais competitivos do mundo, com mais de 340 milhões de linhas ativas~\cite{souza2023}. Neste cenário, a \index{retenção de clientes}retenção de clientes emerge como fator crítico de sucesso, dado que o custo de aquisição de novos clientes supera significativamente o custo de retenção~\cite{provost2013}.
@@ -227,7 +233,13 @@ A relevância desta pesquisa reside em três aspectos: (i) econômico --- a redu
 \chapter{Fundamentação Teórica}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} A fundamentação teórica de uma dissertação deve ser mais abrangente que a de um TCC. Organize-a em pelo menos três eixos: (1) o domínio do problema (churn, telecomunicações); (2) as técnicas computacionais (algoritmos, métricas); (3) o referencial metodológico (validação, reprodutibilidade). Use \texttt{\textbackslash citeonline{}} para citações onde o autor é sujeito e \texttt{\textbackslash cite{}} para citações indiretas.
+\noindent\textbf{Dica ao autor \textemdash\ Fundamentação Teórica de Dissertação:}
+
+A fundamentação de uma dissertação deve ser mais abrangente que a de um TCC. Organize em pelo menos \textbf{três eixos}: (1)~o domínio do problema (\textit{churn}, telecomunicações); (2)~as técnicas computacionais (algoritmos, métricas); (3)~o referencial metodológico (validação, reprodutibilidade).
+
+Não basta listar autores --- você deve \textbf{sintetizar criticamente}: comparar abordagens, identificar convergências e divergências, e posicionar seu trabalho nesse contexto. Inclua uma \textbf{tabela comparativa de trabalhos correlatos} (autor, ano, método, dados, resultado, diferencial).
+
+Use \texttt{\textbackslash citeonline\{\}} quando o autor for sujeito da frase (``\textit{Hastie (2009) afirma que...}'') e \texttt{\textbackslash cite\{\}} para citações indiretas ao final do período.
 \end{dica}
 
 \section{Aprendizado Supervisionado}
@@ -291,7 +303,19 @@ A Tabela~\ref{tab:dicionario} (próximo capítulo) sumariza os dados utilizados.
 \chapter{Metodologia}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} Em dissertações, a metodologia deve ser um capítulo detalhado (10 a 15 páginas). Descreva: tipo de pesquisa (exploratória, descritiva, explicativa), delineamento, fontes de dados, instrumentos, procedimentos de coleta, plano de análise e aspectos éticos. Lembre-se: a banca examinadora avaliará o rigor metodológico do seu trabalho.
+\noindent\textbf{Dica ao autor \textemdash\ Metodologia de Dissertação:}
+
+Em dissertações, a metodologia deve ser um capítulo detalhado (10 a 15 páginas). Descreva:
+\begin{itemize}
+    \item \textbf{Tipo de pesquisa:} Exploratória, descritiva ou explicativa? Qualitativa, quantitativa ou mista?
+    \item \textbf{Delineamento:} Experimental, quase-experimental, estudo de caso?
+    \item \textbf{Fontes de dados:} Origem, volume, período, formatos.
+    \item \textbf{Instrumentos:} Scripts, questionários, APIs.
+    \item \textbf{Procedimentos:} Pré-processamento, treinamento, validação \textemdash\ com hiperparâmetros.
+    \item \textbf{Plano de análise:} Métricas, testes estatísticos, significância.
+    \item \textbf{Aspectos éticos:} Dados anonimizados? Comitê de ética?
+\end{itemize}
+A banca examinadora avaliará o \textbf{rigor metodológico}. Lembre-se: a transparência metodológica é condição para a reprodutibilidade.
 \end{dica}
 
 A presente pesquisa é de natureza aplicada, com abordagem quantitativa e objetivo explicativo. O delineamento segue o pipeline de \index{Ciência de Dados}Ciência de Dados ilustrado na Figura~\ref{fig:pipeline}.
@@ -324,7 +348,15 @@ Seis modelos foram implementados com validação cruzada estratificada ($K = 5$)
 \chapter{Resultados e Discussão}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} Este é o capítulo mais importante da dissertação. Organize-o em seções que correspondam aos objetivos específicos. Cada tabela e figura deve ser analisada criticamente. Compare seus resultados com a literatura nacional e internacional. Use gráficos bem formatados para comunicar padrões complexos.
+\noindent\textbf{Dica ao autor \textemdash\ Resultados e Discussão de Dissertação:}
+
+Este é o capítulo mais importante. Organize em seções que correspondam aos objetivos específicos. Para cada resultado:
+\begin{enumerate}
+    \item \textbf{Observação:} O que os dados mostram? (fato)
+    \item \textbf{Interpretação:} O que isso significa? (análise)
+    \item \textbf{Implicação:} Como se relaciona com a literatura? (conexão)
+\end{enumerate}
+Compare seus resultados com a literatura \textbf{nacional e internacional}. Use gráficos bem formatados para comunicar padrões complexos. Discuta resultados negativos com honestidade.
 \end{dica}
 
 \section{Análise Exploratória}
@@ -375,7 +407,16 @@ A Figura~\ref{fig:importancia} revela que \texttt{satisfacao}, \texttt{num\_recl
 \chapter{Considerações Finais}
 
 \begin{dica}
-\noindent\textbf{Dica ao autor:} As considerações finais de uma dissertação devem retomar a pergunta de pesquisa e os objetivos, sintetizar as contribuições, reconhecer limitações e propor uma agenda de pesquisa. É o momento de demonstrar maturidade acadêmica: reconheça o que não foi possível fazer e aponte caminhos para futuras investigações.
+\noindent\textbf{Dica ao autor \textemdash\ Considerações Finais de Dissertação:}
+
+As considerações finais devem:
+\begin{enumerate}
+    \item \textbf{Retomar a pergunta de pesquisa} e avaliar se foi respondida.
+    \item \textbf{Sintetizar as contribuições} (metodológicas, teóricas, práticas).
+    \item \textbf{Reconhecer limitações} com honestidade \textemdash\ a banca valoriza a maturidade.
+    \item \textbf{Propor uma agenda de pesquisa} com direções concretas para futuras investigações.
+\end{enumerate}
+Não introduza referências ou dados novos. Demonstre maturidade acadêmica ao reconhecer o que não foi possível fazer e por quê.
 \end{dica}
 
 Esta dissertação investigou a eficácia comparativa de seis algoritmos de \textit{Machine Learning}\index{Machine Learning} para previsão de \textit{churn}\index{churn} em telecomunicações. Os resultados confirmam que métodos de \textit{Gradient Boosting} oferecem o melhor equilíbrio entre acurácia e eficiência computacional.
@@ -455,13 +496,13 @@ A Tabela~\ref{tab:coef} apresenta os coeficientes da Regressão Logística, enqu
 
 \index{apêndice}Exemplo de apêndice documental: instrumento de coleta utilizado na pesquisa.
 
-\begin{lstlisting}[caption={Estrutura do questionário aplicado}]
+\begin{lstlisting}[caption={Estrutura do questionario aplicado}]
 1. Idade: ___ anos
 2. Sexo: ( ) M ( ) F
 3. Renda mensal: R$ ___
 4. Tempo de conta: ___ meses
 5. Satisfacao (1-5): ___
-6. Reclamações (12m): ___
+6. Reclamacoes (12m): ___
 ...
 \end{lstlisting}
 

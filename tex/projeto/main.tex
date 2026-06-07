@@ -42,6 +42,14 @@
 \usepackage{hyperref}
 \usepackage{csquotes}
 
+% Ambiente para dicas pedagógicas
+\newenvironment{dica}{%
+    \par\medskip
+    \color{blue!60!black}\small\itshape
+}{%
+    \par\medskip
+}
+
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -65,18 +73,18 @@
     inputencoding=utf8,
     extendedchars=true,
     literate=%
-        {á}{{\'a}}1 {à}{{\`a}}1 {â}{{\^a}}1 {ã}{{\~a}}1 {ä}{{\"a}}1
-        {é}{{\'e}}1 {è}{{\`e}}1 {ê}{{\^e}}1 {ë}{{\"e}}1
-        {í}{{\'i}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
-        {ó}{{\'o}}1 {ò}{{\`o}}1 {ô}{{\^o}}1 {õ}{{\~o}}1 {ö}{{\"o}}1
-        {ú}{{\'u}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
-        {ç}{{\c{c}}}1
-        {Á}{{\'A}}1 {À}{{\`A}}1 {Â}{{\^A}}1 {Ã}{{\~A}}1 {Ä}{{\"A}}1
-        {É}{{\'E}}1 {È}{{\`E}}1 {Ê}{{\^E}}1 {Ë}{{\"E}}1
-        {Í}{{\'I}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
-        {Ó}{{\'O}}1 {Ò}{{\`O}}1 {Ô}{{\^O}}1 {Õ}{{\~O}}1 {Ö}{{\"O}}1
-        {Ú}{{\'U}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
-        {Ç}{{\c{C}}}1
+        {á}{{á}}1 {à}{{à}}1 {â}{{â}}1 {ã}{{ã}}1 {ä}{{\"a}}1
+        {é}{{é}}1 {è}{{\`e}}1 {ê}{{ê}}1 {ë}{{\"e}}1
+        {í}{{í}}1 {ì}{{\`i}}1 {î}{{\^i}}1 {ï}{{\"i}}1
+        {ó}{{ó}}1 {ò}{{\`o}}1 {ô}{{ô}}1 {õ}{{õ}}1 {ö}{{\"o}}1
+        {ú}{{ú}}1 {ù}{{\`u}}1 {û}{{\^u}}1 {ü}{{\"u}}1
+        {ç}{{ç}}1
+        {Á}{{Á}}1 {À}{{À}}1 {Â}{{Â}}1 {Ã}{{Ã}}1 {Ä}{{\"A}}1
+        {É}{{É}}1 {È}{{\`E}}1 {Ê}{{Ê}}1 {Ë}{{\"E}}1
+        {Í}{{Í}}1 {Ì}{{\`I}}1 {Î}{{\^I}}1 {Ï}{{\"I}}1
+        {Ó}{{Ó}}1 {Ò}{{\`O}}1 {Ô}{{Ô}}1 {Õ}{{Õ}}1 {Ö}{{\"O}}1
+        {Ú}{{Ú}}1 {Ù}{{\`U}}1 {Û}{{\^U}}1 {Ü}{{\"U}}1
+        {Ç}{{Ç}}1
 }
 
 \graphicspath{{figuras/}}
@@ -135,15 +143,50 @@
 
 \section{Introdução}
 
+\begin{dica}
+\noindent\textbf{Dica ao autor \textemdash\ Introdução de Projeto de Pesquisa:}
+
+Um projeto de pesquisa não apresenta resultados, ele \textbf{vende uma ideia}. A introdução deve convencer o avaliador de que o tema é importante e merece ser estudado.
+\begin{itemize}
+    \item \textbf{Cenário:} Qual é o contexto atual do tema? (Use dados reais para ancorar a discussão).
+    \item \textbf{O Problema:} O que está quebrado, incompleto ou ineficiente neste cenário?
+    \item \textbf{A Proposta:} O que você vai fazer para resolver ou mitigar este problema?
+\end{itemize}
+Seja persuasivo, mas cientificamente preciso.
+\end{dica}
+
 A retenção de clientes é um dos principais desafios no setor de telecomunicações. O fenômeno do \textit{churn} representa perda significativa de receita, sendo que adquirir um novo cliente custa de cinco a sete vezes mais do que reter um existente \cite{provost2013}. Nesse contexto, a aplicação de técnicas de Aprendizado de Máquina (\textit{Machine Learning}) tem se mostrado eficaz na identificação precoce de clientes com alto risco de evasão \cite{hastie2009}.
 
 Este projeto de pesquisa propõe o desenvolvimento de um sistema preditivo de \textit{churn} baseado em modelos supervisionados de classificação, seguindo um pipeline reprodutível de Ciência de Dados.
 
 \section{Problemática}
 
+\begin{dica}
+\noindent\textbf{Dica ao autor \textemdash\ A Pergunta de Pesquisa:}
+
+Todo projeto científico nasce de uma pergunta.
+\begin{itemize}
+    \item Formule o problema como uma \textbf{pergunta explícita} (terminando com pondo de interrogação).
+    \item A pergunta deve ser clara, precisa e empírica (possível de ser respondida com dados, não com opiniões).
+    \item Exemplo ruim: "Qual o melhor modelo de IA?"
+    \item Exemplo bom: "Qual modelo supervisionado (LogReg, RF, LGBM) apresenta maior AUC-ROC na previsão de churn em operadoras de telefonia móvel?"
+\end{itemize}
+\end{dica}
+
 As empresas de telecomunicações enfrentam dificuldades em identificar proativamente clientes propensos ao cancelamento. A ausência de modelos preditivos eficazes leva a ações reativas e custosas. Diante disso, questiona-se: \textbf{como utilizar dados históricos de clientes para construir modelos preditivos capazes de antecipar o \textit{churn} com alta acurácia?}
 
 \section{Justificativa}
+
+\begin{dica}
+\noindent\textbf{Dica ao autor \textemdash\ O "Por quê?":}
+
+A justificativa responde à pergunta: \textbf{Por que este estudo deve ser realizado?}
+\begin{itemize}
+    \item \textbf{Relevância Acadêmica:} Qual lacuna na literatura este trabalho vai preencher?
+    \item \textbf{Relevância Social/Econômica:} Quem se beneficia com os resultados? (ex: empresas reduzem custos, pacientes recebem diagnóstico mais rápido).
+    \item \textbf{Viabilidade:} Mostre brevemente que o projeto é exequível no tempo proposto.
+\end{itemize}
+\end{dica}
 
 A relevância deste projeto reside na oportunidade de reduzir custos operacionais por meio da retenção preventiva de clientes. Além disso, a construção de um pipeline reprodutível contribui para a literatura ao fornecer uma referência metodológica para trabalhos futuros. Do ponto de vista acadêmico, o projeto integra conceitos de Ciência de Dados, Estatística e Aprendizado de Máquina, consolidando a formação do pesquisador.
 
@@ -171,6 +214,17 @@ Desenvolver e comparar modelos de \textit{Machine Learning} para a previsão de 
 % ============================================================
 \section{Revisão de Literatura}
 
+\begin{dica}
+\noindent\textbf{Dica ao autor \textemdash\ Estado da Arte no Projeto:}
+
+No projeto, a revisão de literatura não precisa ser exaustiva como na tese final, mas deve ser \textbf{estratégica}.
+\begin{itemize}
+    \item Demonstre que você conhece os principais autores do campo.
+    \item Foque em mostrar o que \textbf{já foi feito} e, principalmente, o que \textbf{ainda não foi feito} (a lacuna que seu projeto vai preencher).
+    \item Se você propõe usar LightGBM para churn, cite quem já usou Random Forest para o mesmo fim e quem já usou LightGBM para outros fins. Você está conectando os pontos.
+\end{itemize}
+\end{dica}
+
 A previsão de \textit{churn} tem sido amplamente estudada na literatura. \citeonline{ahmad2019} aplicaram modelos de \textit{Machine Learning} em uma plataforma de \textit{Big Data} para prever evasão em telecomunicações, obtendo resultados promissores com \textit{Random Forest} e \textit{Gradient Boosting}.
 
 No contexto brasileiro, \citeonline{silva2022} desenvolveram um modelo preditivo para inadimplência bancária, demonstrando a aplicabilidade das técnicas em dados nacionais. Estudos recentes~\cite{pecanha2024} destacam a importância da reprodutibilidade em experimentos de Ciência de Dados, propondo \textit{frameworks} para versionamento de dados e modelos.
@@ -181,6 +235,18 @@ Os fundamentos teóricos dos algoritmos utilizados --- Regressão Logística, \t
 % 6. METODOLOGIA
 % ============================================================
 \section{Metodologia}
+
+\begin{dica}
+\noindent\textbf{Dica ao autor \textemdash\ O "Como?":}
+
+A banca avalia a metodologia para saber se \textbf{seu plano é viável} para responder à pergunta de pesquisa.
+\begin{itemize}
+    \item Use o \textbf{tempo futuro} (``serão coletados'', ``será testado'').
+    \item \textbf{Dados:} De onde virão? Se houver necessidade de aprovação em Comitê de Ética, informe o status.
+    \item \textbf{Métodos:} Liste as técnicas e algoritmos que pretende testar.
+    \item \textbf{Avaliação:} Como você vai definir se obteve sucesso? (Métricas-alvo).
+\end{itemize}
+\end{dica}
 
 A metodologia será estruturada nas seguintes etapas, conforme ilustrado na Figura~\ref{fig:pipeline}:
 
@@ -214,6 +280,17 @@ Os modelos serão comparados pelas métricas de AUC-ROC, F1-Score e acurácia, c
 % 7. CRONOGRAMA
 % ============================================================
 \section{Cronograma}
+
+\begin{dica}
+\noindent\textbf{Dica ao autor \textemdash\ Gestão do Tempo:}
+
+O cronograma é a prova de que seu projeto cabe no tempo disponível (1 ano para TCC, 2 para mestrado, 4 para doutorado).
+\begin{itemize}
+    \item Seja realista. Projetos de dados costumam gastar mais tempo na coleta/limpeza do que na modelagem.
+    \item Inclua tempos para: revisão bibliográfica, comitê de ética (se aplicável), coleta, limpeza, modelagem, escrita e revisão.
+    \item A tabela \ref{tab:cronograma} usa o pacote \texttt{booktabs} e é o formato ideal para cronogramas acadêmicos.
+\end{itemize}
+\end{dica}
 
 \begin{table}[htbp]
 \centering
