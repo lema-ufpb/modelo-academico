@@ -185,7 +185,7 @@ latex-clean-all: ## 🧹  Remove artefatos de todos os documentos
 	@echo "  $(YELLOW)🧹  Limpando artefatos de todos os documentos...$(RESET)"
 	@for doc in tcc_artigo tcc artigo dissertacao tese livro relatorio projeto; do \
 		echo "  → Limpando $$doc"; \
-		cd $(TEX_DIR)/$$doc && latexmk -C main.tex 2>/dev/null || true; \
+		(cd $(TEX_DIR)/$$doc && latexmk -C main.tex 2>/dev/null) || true; \
 	done
 	@echo "  $(GREEN)✅  Artefatos de todos os documentos removidos!$(RESET)"
 	@echo ""

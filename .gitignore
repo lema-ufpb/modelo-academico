@@ -74,6 +74,8 @@ dados/processados/*
 dados/brutos/*
 !dados/processados/.gitkeep
 !dados/brutos/.gitkeep
+!dados/brutos/README.md
+!dados/processados/README.md
 
 # ── Resultados (regeneráveis pelos scripts) ──────────────────
 resultados/*
