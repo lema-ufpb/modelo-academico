@@ -14,6 +14,31 @@ Uso:
 
 Saída:
     dados/brutos/dataset_clientes.csv
+
+Como adaptar para seu projeto:
+    Este é provavelmente o primeiro script que você vai modificar.
+    Substitua o corpo da função `gerar_dataset()` pela lógica de
+    obtenção dos seus dados reais. Exemplos de cenários comuns:
+
+    - Leitura de CSV local:
+        df = pd.read_csv("dados/brutos/meu_dataset.csv")
+
+    - Download de API:
+        import requests
+        response = requests.get("https://api.exemplo.com/dados")
+        df = pd.DataFrame(response.json())
+
+    - Download de base pública (Kaggle, UCI, etc.):
+        from urllib.request import urlretrieve
+        urlretrieve("https://url-do-dataset.csv", CAMINHO_SAIDA)
+
+    - Web scraping:
+        from bs4 import BeautifulSoup
+        # ... lógica de scraping
+
+    O importante é que, ao final, o script salve o arquivo em
+    `dados/brutos/` sem nenhuma transformação — os dados brutos
+    devem ser preservados exatamente como foram coletados.
 """
 
 import os

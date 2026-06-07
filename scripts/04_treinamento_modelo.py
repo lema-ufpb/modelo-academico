@@ -22,6 +22,28 @@ Saídas:
     modelos/random_forest.joblib
     modelos/lightgbm.joblib
     resultados/metricas/validacao_cruzada.csv
+
+Como adaptar para seu projeto:
+    1. Na função `definir_modelos()`, adicione ou remova modelos
+       conforme seu problema:
+       - Classificação: SVM, KNN, XGBoost, Redes Neurais (MLPClassifier)
+       - Regressão: LinearRegression, Ridge, Lasso, SVR, XGBRegressor
+       - Séries temporais: ARIMA, Prophet (requer pipeline diferente)
+
+    2. Para ajustar hiperparâmetros, modifique os parâmetros no
+       construtor de cada modelo. Para otimização automática, considere
+       GridSearchCV ou Optuna.
+
+    3. Para problemas de regressão, altere as métricas de `scoring`
+       na função `validacao_cruzada()`:
+       scoring = {"r2": "r2", "mae": "neg_mean_absolute_error"}
+
+    4. Ajuste K_FOLDS conforme o tamanho do seu dataset:
+       - Datasets pequenos (<1000): use K=10 ou Leave-One-Out
+       - Datasets grandes (>10000): K=5 é suficiente
+
+    5. O script salva modelos em .joblib, que é eficiente para
+       modelos scikit-learn. Para modelos PyTorch/TF, use .pt/.h5.
 """
 
 import os

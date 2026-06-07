@@ -16,6 +16,31 @@ Saídas:
     dados/processados/dataset_processado.csv
     dados/processados/dataset_treino.csv
     dados/processados/dataset_teste.csv
+
+Como adaptar para seu projeto:
+    Este script é o "coração" da preparação de dados. Para adaptá-lo:
+
+    1. `tratar_valores_ausentes()`: Ajuste as estratégias de imputação
+       para cada variável do seu dataset. Regra geral:
+       - Variáveis numéricas assimétricas → mediana
+       - Variáveis numéricas simétricas → média
+       - Variáveis categóricas/ordinais → moda
+       - Muitos ausentes (>50%) → considere remover a variável
+
+    2. `tratar_outliers()`: Defina quais variáveis recebem winsorização
+       e em quais percentis. Para dados com outliers legítimos (ex:
+       renda de CEOs), considere não tratar.
+
+    3. `engenharia_features()`: Crie variáveis derivadas que façam
+       sentido para o seu domínio. Pergunte-se: "Que combinações
+       de variáveis poderiam ser informativas?"
+
+    4. `codificar_categoricas()`: Ajuste a lista de variáveis a serem
+       codificadas. Para categóricas com muitas categorias (>10),
+       considere Target Encoding em vez de One-Hot.
+
+    5. `dividir_treino_teste()`: Ajuste PROPORCAO_TESTE e as colunas
+       a normalizar conforme suas variáveis.
 """
 
 import os

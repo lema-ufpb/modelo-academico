@@ -23,6 +23,29 @@ Saídas:
     tex/<doc>/tabelas/tab_coeficientes_modelo.tex   (cada documento)
     tex/<doc>/tabelas/tab_matriz_confusao.tex       (cada documento)
     tex/<doc>/tabelas/tab_estatisticas_descritivas.tex (cada documento)
+
+Como adaptar para seu projeto:
+    1. Ajuste as métricas em `avaliar_modelos()` conforme seu problema:
+       - Classificação binária: AUC-ROC, F1, Precisão, Recall
+       - Classificação multiclasse: macro/micro F1, confusion matrix NxN
+       - Regressão: R², MAE, RMSE, MAPE
+
+    2. Para problemas de regressão, substitua `plotar_curva_roc()`
+       por gráficos de resíduos ou previsão vs. real.
+
+    3. As funções `gerar_tabela_latex_*()` produzem tabelas LaTeX
+       que são salvas em TODOS os diretórios tex/<doc>/tabelas/.
+       Se você adicionar um novo tipo de documento, basta adicioná-lo
+       à lista DOC_TYPES no topo do script.
+
+    4. Para adicionar novas figuras ao trabalho, crie funções
+       que salvem PNGs em `resultados/figuras/`. O script 06
+       converterá automaticamente para EPS e distribuirá para
+       cada diretório de documento.
+
+    5. Se precisar de tabelas adicionais no LaTeX, siga o padrão
+       das funções existentes: retorne uma string com o código
+       LaTeX e use `_salvar_tabela()` para distribuir.
 """
 
 import os

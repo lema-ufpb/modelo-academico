@@ -18,6 +18,20 @@ Entradas:
 
 Saídas:
     tex/<doc>/figuras/*.eps                      (cada documento)
+
+Como adaptar para seu projeto:
+    Este script geralmente NÃO precisa de modificação. Ele detecta
+    automaticamente todos os PNGs em `resultados/figuras/` e os
+    converte para EPS.
+
+    Se precisar ajustar:
+    1. Para adicionar novos tipos de documento, adicione o nome
+       à lista DOC_TYPES no topo do script.
+    2. O diagrama do pipeline (`gerar_diagrama_pipeline()`) pode
+       ser editado para refletir as etapas do seu projeto. Basta
+       alterar a lista `etapas` com os nomes e cores desejados.
+    3. Se suas figuras já forem geradas em formato vetorial (SVG,
+       PDF), você pode pular a conversão e copiar diretamente.
 """
 
 import glob

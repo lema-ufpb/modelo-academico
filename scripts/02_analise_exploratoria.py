@@ -16,6 +16,22 @@ Saídas:
     resultados/figuras/distribuicao_features.png
     resultados/figuras/correlacao_heatmap.png
     resultados/metricas/estatisticas_descritivas.csv
+
+Como adaptar para seu projeto:
+    1. Atualize `CAMINHO_DADOS` para apontar para seu dataset.
+    2. Na função `estatisticas_descritivas()`, ajuste a lista
+       `colunas_num` com os nomes das suas variáveis numéricas.
+    3. Na função `plotar_distribuicoes()`, ajuste `colunas` e
+       substitua "churn" pelo nome da sua variável-alvo.
+    4. Na função `plotar_churn_por_categoria()`, ajuste `colunas_cat`
+       com suas variáveis categóricas.
+    5. Adicione novas visualizações conforme necessário:
+       - Boxplots para identificar outliers
+       - Gráficos de dispersão para relações bivariadas
+       - Análise de séries temporais (se aplicável)
+    6. A EDA é exploratória por natureza — não tenha medo de
+       criar gráficos "feios" nesta fase. O objetivo é entender
+       os dados, não publicar figuras bonitas (isso vem depois).
 """
 
 import os
